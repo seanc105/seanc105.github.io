@@ -4,20 +4,62 @@ var markers = {
     other_landscape_markers: []
 }
 
-function toggle_labels() {
-    for (var marker_group in markers) {
-        markers[marker_group].forEach(marker => {
-            if (marker.isTooltipOpen()) {
-                marker.closeTooltip();
+function update_searchbox(map, searchbox) {
+    var fuse = new Fuse(Object.keys(database.MapLocations), {
+        shouldSort: true,
+        threshold: 0.6,
+        location: 0,
+        distance: 100,
+        minMatchCharLength: 1
+    });
+
+    searchbox.onInput("keyup", function (e) {
+        if (e.keyCode == 13) {
+            search(fuse);
+        } else {
+            var value = searchbox.getValue();
+            if (value != "") {
+                var results = fuse.search(value);
+                searchbox.setItems(results.map(res => res.item).slice(0, 5));
             } else {
-                marker.openTooltip();
+                searchbox.clearItems();
             }
-        });
+        }
+    });
+
+    function search() {
+        var value = searchbox.getValue();
+        if (value != "") {
+            var results = fuse.search(value);
+            likely_item = database.MapLocations[results[0].item];
+            var respective_marker;
+            var done = false;
+            for (var marker_group in markers) {
+                for (var i in markers[marker_group]) {
+                    if (markers[marker_group][i].options.title == results[0].item) {
+                        respective_marker = markers[marker_group][i];
+                        done = true;
+                        break;
+                    }
+                }
+                if (done) {
+                    break;
+                }
+            }
+            respective_marker.toggleTooltip();
+            map.flyTo([likely_item.Latitude, likely_item.Longitude], 4);
+        }
+    
+        setTimeout(function () {
+            searchbox.hide();
+            searchbox.clear();
+        }, 600);
     }
+    
+    searchbox.onButton("click", search);
 }
 
 function draw_map(map, L) {
-
     icons = {
         town: {
             small: L.icon({
@@ -49,6 +91,8 @@ function draw_map(map, L) {
         }
     }
 
+    tooltipLayer = L.layerGroup();
+
     for (var location in database.MapLocations) {
         data = database.MapLocations[location];
         location_type = database.ClassificationTypes[data.ClassificationTypeId].Label;
@@ -62,21 +106,22 @@ function draw_map(map, L) {
             type = 'mountain_markers';
             icon = icons.mountain.small;
         }
-        location_marker = L.marker([data.Latitude, data.Longitude]).bindTooltip(location_popup(location, data), {direction: 'top', permanent: true});
+        location_marker = L.marker([data.Latitude, data.Longitude], {title: location}).bindTooltip(location_popup(location, data), {direction: 'top', riseOnHover: true});
+        // L.tooltip({direction: 'top', permanent: true}).setContent(location_popup(location, data)).setLatLng([data.Latitude, data.Longitude]).addTo(tooltipLayer);
         if (icon) {
             location_marker.setIcon(icon);
         }
-
         markers[type].push(location_marker)
     }
 
     var overlays = {
+        // "Toggle all tooltips": tooltipLayer.addTo(map),
         "Cities and towns": L.layerGroup(markers.town_markers).addTo(map),
         "Mountains": L.layerGroup(markers.mountain_markers).addTo(map),
         "Landscapes and Regions": L.layerGroup(markers.other_landscape_markers).addTo(map),
     };
 
-    L.control.layers(null, overlays, {collapsed:false}).addTo(map);
+    L.control.layers(null, overlays, {collapsed:false, position: "bottomright"}).addTo(map);    
 
     // on zoom, update icons
     map.on('zoom', function(){
