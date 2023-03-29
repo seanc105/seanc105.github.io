@@ -25,8 +25,8 @@ h6 {
 .leaflet-container a.leaflet-popup-close-button {
     background-image: url('../images/ui/closebutton.png');
     background-size: 32px 32px;
-    top: 16;
-    right: 16;    
+    top: 16  !important;
+    right: 16 !important;    
     width: 32px;
     height: 32px;
 }
