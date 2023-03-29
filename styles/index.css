@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "diablo";
+    src: url("../fonts/diablo.ttf") format("truetype");
+}
+
+h6 { 
+    font-family: "diablo", sans-serif;
+    font-size: small;
+    margin-bottom: 0;
+}
+
+.leaflet-popup-content-wrapper {
+    background-image: url('../images/ui/dialogue_tall.png');
+    height: 441px;
+    width: 339px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.leaflet-popup-content {
+    margin-top: 10px;
+    width: 100% !important; /* Stupid Leaflet */
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    background-image: url('../images/ui/closebutton.png');
+    background-size: 32px 32px;
+    top: 16;
+    right: 16;    
+    width: 32px;
+    height: 32px;
+}
+
+.leaflet-container a.leaflet-popup-close-button > span {
+    display: none;
+}
+
+.diablo-card {
+    max-width: 90%;
+    height: 90%;
+}
+
+.diablo-card-header {
+    height: 50px;
+    width: 100%;
+}
+
+.diablo-card-header > h5 {
+    text-align: center;
+    font-family: "diablo", sans-serif;
+    color: white;
+}
+
+.diablo-card-body-contents {
+    color: white;
+    margin-top: 8px;
+    height: 90%;
+}
+
+.diablo-card-body-contents > p {
+    margin: 0; 
+}
+
+.bold-font { 
+    font-weight: 800;
+}
+
+.underline-font { 
+    text-decoration: underline;
+}

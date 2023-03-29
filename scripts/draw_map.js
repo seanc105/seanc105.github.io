@@ -106,7 +106,9 @@ function draw_map(map, L) {
             type = 'mountain_markers';
             icon = icons.mountain.small;
         }
-        location_marker = L.marker([data.Latitude, data.Longitude], {title: location}).bindTooltip(location_popup(location, data), {direction: 'top', riseOnHover: true});
+        location_marker = L.marker([data.Latitude, data.Longitude], {title: location})
+                           .bindTooltip(location_tooltip(location), {direction: 'top', riseOnHover: true})
+                           .bindPopup(custom_popup(location, data, ['type', 'location', 'information', 'inconsistent_facts', 'places_of_interest', 'been_here', 'first_seen_here']));
         // L.tooltip({direction: 'top', permanent: true}).setContent(location_popup(location, data)).setLatLng([data.Latitude, data.Longitude]).addTo(tooltipLayer);
         if (icon) {
             location_marker.setIcon(icon);
