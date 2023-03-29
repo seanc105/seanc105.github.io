@@ -2,6 +2,30 @@ function get_popup_header(name) {
     return `<h5>`+name+`</h5>`;
 }
 
+function parse_links_in_text(text) {
+    return text;
+}
+
+function set_character_link(text) {
+    return text;
+}
+
+function set_location_link(text) {
+    return text;
+}
+
+function set_source_link(text) {
+    // Format: [<source_id>]
+    if (text <= 0) {
+        return text;
+    }
+    var source_text = database.Sources[text].Name;
+    return `
+    <span class="diablo-card-tooltip"> [`+ text +`]
+        <span class="diablo-card-tooltip-text">` + source_text + `</span>
+    </span>`;
+}
+
 function get_type(data) {
     var classification_type = database.ClassificationTypes[data.ClassificationTypeId].Label;
     return `<p><span class="bold-font">Type:</span> <span style="color: #0F0;">` + classification_type + `</p>`;
@@ -10,19 +34,15 @@ function get_type(data) {
 function get_location_details(data) {
     var from_loc_details = data.FromLocationDescription;
     var from_loc_src = data.FromLocationSourceId;
-    // TODO: Link to sources
-    // TODO: Fix links in details
-    return `<p><span class="bold-font">Location:</span> <span style="color: #0FF;">` + from_loc_details + ` [` + from_loc_src + `]</p>`;
+    return `<p><span class="bold-font">Location:</span> <span style="color: #0FF;">` + parse_links_in_text(from_loc_details) + set_source_link(from_loc_src) + `</p>`;
 }
 
 function get_information(data) {
-    // TODO: Link to sources
-    // TODO: Fix links in information
     var notes = data.Notes || [];
     var all_notes = "";
     notes.forEach(note => {
         if (!note.Inconsistent) {
-            all_notes += `<p style="color: #BBB;"> - ` + note.Description + ` [` + note.SourceId +`]</p>`;
+            all_notes += `<p style="color: #BBB;"> - ` + parse_links_in_text(note.Description) + set_source_link(note.SourceId) +`</p>`;
         }
     });
     if (all_notes == "") {
@@ -35,13 +55,11 @@ function get_information(data) {
 }
 
 function get_inconsistent_facts(data) {
-    // TODO: Link to sources
-    // TODO: Fix links in facts
     var notes = data.Notes || [];
     var all_notes = "";
     notes.forEach(note => {
         if (note.Inconsistent) {
-            all_notes += `<p style="color: #F00;"> - ` + note.Description + ` [` + note.SourceId +`]</p>`;
+            all_notes += `<p style="color: #F00;"> - ` + parse_links_in_text(note.Description) + set_source_link(note.SourceId) +`</p>`;
         }
     });
     if (all_notes == "") {
@@ -54,13 +72,11 @@ function get_inconsistent_facts(data) {
 }
 
 function get_places_of_interest(data) {
-    // TODO: Link to sources
-    // TODO: Fix links in places
     var all_places = "";
 
     Object.keys(database.Locations).forEach(location => {
         if (database.Locations[location].MapLocationId == data.Id) {
-            all_places += `<p style="color: #BBB;"> - ` + location +`</p>`;
+            all_places += `<p style="color: #BBB;"> - ` + set_location_link(location) +`</p>`;
         }
     });
 
@@ -74,14 +90,12 @@ function get_places_of_interest(data) {
 }
 
 function get_been_here(data) {
-    // TODO: Link to sources
-    // TODO: Fix links in who
     var all_people = "";
 
     Object.keys(database.Characters).forEach(character => {
         for (var i in database.Characters[character].TraveledLocations) {
             if (database.Characters[character].TraveledLocations[i].MapLocationId == data.Id) {
-                all_people += `<p style="color: #BBB;"> - ` + character +`</p>`;
+                all_people += `<p style="color: #BBB;"> - ` + set_character_link(character) +`</p>`;
                 break;
             }
         };
@@ -97,13 +111,11 @@ function get_been_here(data) {
 }
 
 function get_first_seen_here(data) {
-    // TODO: Link to sources
-    // TODO: Fix links in who
     var all_people = "";
 
     for (var character in database.Characters) {
         if (database.Characters[character].TraveledLocations[0].MapLocationId == data.Id) {
-            all_people += `<p style="color: #BBB;"> - ` + character +`</p>`;
+            all_people += `<p style="color: #BBB;"> - ` + set_character_link(character) +`</p>`;
         }
     };
 

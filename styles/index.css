@@ -68,3 +68,42 @@ h6 {
 .underline-font { 
     text-decoration: underline;
 }
+
+/* Yes I know, making a link like a button is absolutely terrible on a11y. But
+   Leaflet gives me no option for linking to other details without refreshing the
+   entire page */
+.diablo-card-link-button {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.diablo-card-tooltip {
+    /* position: relative; TODO: FIX */
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.diablo-card-tooltip-text {
+    font-family: "diablo", sans-serif;
+    font-size: small;
+
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    
+    position: absolute;
+    z-index: 1;
+    width: 120px;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+.diablo-card-tooltip:hover .diablo-card-tooltip-text {
+    visibility: visible;
+}
