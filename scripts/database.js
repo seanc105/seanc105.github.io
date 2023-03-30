@@ -41690,8 +41690,8 @@ database = {
             "ClassificationTypeId": 5,
             "FromLocationDescription": "Unknown",
             "FromLocationSourceId": 0,
-            "Latitude": -39.707187,
-            "Longitude": 156.489258
+            "Latitude": -41.365772, 
+            "Longitude": 156.066256
         },
         "Challsop Volcano": {
             "Id": 92,
@@ -41710,8 +41710,8 @@ database = {
             "ClassificationTypeId": 25,
             "FromLocationDescription": "Unknown",
             "FromLocationSourceId": 0,
-            "Latitude": -48.487486,
-            "Longitude": 169.584961
+            "Latitude": -26.980808, 
+            "Longitude": 156.489605
         },
         "Low Hills": {
             "Id": 94,
@@ -41720,7 +41720,7 @@ database = {
             "ClassificationTypeId": 16,
             "FromLocationDescription": "Unknown",
             "FromLocationSourceId": 0,
-            "Latitude": -43.004647,
+            "Latitude": -44.004647,
             "Longitude": 156.401367
         },
         "Mt. Paolarr": {
@@ -42038,8 +42038,8 @@ database = {
             "ClassificationTypeId": 1,
             "FromLocationDescription": "Unknown",
             "FromLocationSourceId": 0,
-            "Latitude": -60.457218,
-            "Longitude": 169.628906,
+            "Latitude": -48.487486,
+            "Longitude": 169.584961,
             "Notes": [
                 {
                     "Description": "A village that had some locals killed from {{{Characters:Harringer:Harringer}}} and other soldiers, under command of {{{Characters:Stretvanger:Stretvanger}}}.",
@@ -42174,8 +42174,8 @@ database = {
             "ClassificationTypeId": 28,
             "FromLocationDescription": "Region shown on all maps.",
             "FromLocationSourceId": 26,
-            "Latitude": -23.32208,
-            "Longitude": -87.802734
+            "Latitude": -20.95366, 
+            "Longitude": -88.047945
         },
         "Swamplands": {
             "Id": 125,

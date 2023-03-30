@@ -3,10 +3,42 @@
     src: url("../fonts/diablo.ttf") format("truetype");
 }
 
+h5 {
+    text-align: center;
+    font-family: "diablo", sans-serif;
+    color: white;
+}
+
 h6 { 
     font-family: "diablo", sans-serif;
     font-size: small;
     margin-bottom: 0;
+}
+
+.diablo-region-font {
+    font-family: "diablo", sans-serif;
+    margin-bottom: 0;
+    text-align: center;
+    text-shadow: 1px 0 #bbb, -1px 0 #bbb, 0 1px #bbb, 0 -1px #bbb,
+                 1px 1px #bbb, -1px -1px #bbb, 1px -1px #bbb, -1px 1px #bbb;
+}
+
+.small-diablo-font {
+    font-size: x-small;
+    width: 120px !important;
+    left: -60 !important;
+}
+
+.medium-diablo-font {
+    font-size: large;
+    width: 200px !important;
+    left: -100 !important;
+}
+
+.large-diablo-font {
+    font-size: xx-large;
+    width: 340px !important;
+    left: -170 !important;
 }
 
 .leaflet-popup-content-wrapper {
@@ -57,12 +89,6 @@ h6 {
 
 .diablo-card-header {
     height: 50px;
-}
-
-h5 {
-    text-align: center;
-    font-family: "diablo", sans-serif;
-    color: white;
 }
 
 .diablo-card-body-contents {
