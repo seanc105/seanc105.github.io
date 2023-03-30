@@ -108,7 +108,7 @@ function draw_map(map, L) {
         }
         location_marker = L.marker([data.Latitude, data.Longitude], {title: location})
                            .bindTooltip(location_tooltip(location), {direction: 'top', riseOnHover: true})
-                           .bindPopup(custom_popup(location, data, ['type', 'location', 'information', 'inconsistent_facts', 'places_of_interest', 'been_here', 'first_seen_here']));
+                           .bindPopup(custom_popup(location, data, popover_display_items.MapLocations), {autoClose: false});
         // L.tooltip({direction: 'top', permanent: true}).setContent(location_popup(location, data)).setLatLng([data.Latitude, data.Longitude]).addTo(tooltipLayer);
         if (icon) {
             location_marker.setIcon(icon);
