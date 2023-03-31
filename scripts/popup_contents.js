@@ -16,12 +16,12 @@ function get_popup_header(name) {
     return `<h5>`+name+`</h5>`;
 }
 
-function add_popover_stack(type, item) {
+function add_popover_stack(type, item, title=null) {
     var popup = document.getElementsByClassName('leaflet-popup-content')[0];
     // Store current popup content on the stack
     popover_stack.push(popup.cloneNode(true));
     var data = database[type][item];
-    var new_popup_body = custom_popup(item, data, popover_display_items[type]);
+    var new_popup_body = custom_popup(title || item, data, popover_display_items[type]);
     popup.innerHTML = new_popup_body;
 }
 
@@ -129,7 +129,16 @@ function get_parent_species(data) {
     // Really only for creatures, so safe to assume it's for Creatures
     var parent_species = "N/A";
     if (data.ParentSpeciesId != 0) {
-        parent_species = database.Creatures[data.ParentSpeciesId].Name;
+        for (var i in database.Creatures) {
+            if (database.Creatures[i].Id == data.ParentSpeciesId) {
+                parent_species = `<button class="diablo-card-link-button" 
+                    onmouseup='add_popover_stack("Creatures", "`+i.replace("'", "&#39;")+`")'>`
+                    +i+
+                `</button>`;
+                break;
+            }
+        }
+        
     }
     return `<p><span class="bold-text">Parent Species:</span> <span style="color: #0FF;">` + parent_species + `</p>`;
 }
@@ -138,7 +147,7 @@ function get_comes_after(data) {
     var prev = data.Number - 1;
     var label = "N/A";
     // Really only for timeline stuff, so safe to assume it's for CalendarItems
-    if (database.CalendarIems[prev]) {
+    if (database.CalendarItems[prev]) {
         label = database.CalendarItems[prev].Name;
     }
     
@@ -181,7 +190,7 @@ function get_previous_event(data) {
 }
 
 function get_event_name(data) {
-    return `<p><span class="bold-text">Event Name:</span> <span style="color: #0F0;">` + parse_links_in_text(data.EventName) + set_source_link(data.SourceId) + `</p>`;
+    return `<p><span class="bold-text">Event Name:</span> <span style="color: #0F0;">` + parse_links_in_text(data.EventName) + set_source_link(data.EventSourceId) + `</p>`;
 }
 
 function get_year(data) {
@@ -302,7 +311,7 @@ function custom_popup(name, data, things_to_display) {
                 <div class="col col-lg-12">`+get_popup_header(name)+`</div>`) + `
             </div>
         </div>
-        <div class="diablo-card-body-contents overflow-scroll">` +
+        <div class="diablo-card-body-contents">` +
             (things_to_display.includes('type') ? get_type(data) : '') +
             (things_to_display.includes('class') ? get_character_class(data) : '') +
             (things_to_display.includes('alt_names') ? get_character_alt_names(data) : '') +
@@ -326,17 +335,33 @@ function custom_popup(name, data, things_to_display) {
     </div>`;
 }
 
-function draw_list(database_name, use_key_for_label, label_field=null) {
-
-}
-
-function draw_encyclopedia_category(title, database_name) {
-    var popup = document.getElementsByClassName('leaflet-popup-content')[0];
-    // Store current popup content on the stack
-    popover_stack.push(popup.cloneNode(true));
-    var data = database[type][item];
-
-    var new_popup_body = `
+function draw_list(title, db, key) {
+    var database_table = database[db];
+    var items = [];
+    function get_button(text, item_link_key) {
+        item_link_key = item_link_key.toString().replaceAll("'", "&#39;").replaceAll('"', "&#34;")
+        text = text.toString().replaceAll("'", "&#39;").replaceAll('"', "&#34;")
+        return `
+        <button class="encyclopedia-menu-button" onmouseup="add_popover_stack('`
+          +db+`', '`+item_link_key+`', '`+text+`')">`+text+`</button>`;
+    }
+    var initial_items = []
+    if (key) {
+        if (Number.isInteger(database_table["1"][key])) {
+            initial_items = Object.keys(database_table).sort(function(a,b) { return database_table[a][key]-database_table[b][key]; });
+        } else {
+            initial_items = Object.keys(database_table).sort();
+        }
+        initial_items.forEach(item => {
+            items.push(get_button(database_table[item][key], item));
+        });
+    } else {
+        initial_items = Object.keys(database_table).sort();
+        initial_items.forEach(item => {
+            items.push(get_button(item, item));
+        });
+    }
+    return `
     <div class="diablo-card">
         <div class="container">
             <div class="row align-items-center diablo-card-header">
@@ -348,27 +373,77 @@ function draw_encyclopedia_category(title, database_name) {
                 <div class="col col-lg-12"><h5>`+title+`</h5></div>`) + `
             </div>
         </div>
-        <div class="diablo-card-body-contents overflow-scroll">` +
-            Object.keys(categories).map(category => {
-                return `<button class="encyclopedia-menu-button" onclick="draw_encyclopedia_category('`+category+`', '`+categories[category]+`')">`+category+`</button>`
-            }).join('') +
+        <div class="diablo-card-body-contents">` +
+            items.join('') +
        `</div>
     </div>`;
+}
+
+function draw_classes() {
+    return `
+    <div class="diablo-card">
+        <div class="container">
+            <div class="row align-items-center diablo-card-header">
+                <div class="col col-lg-2">
+                    <button class="diablo-card-go-back-button d-flex align-items-center" onmouseup="pop_popover_stack()">←</button>                    
+                </div>
+                <div class="col col-lg-9"><h5>Classes</h5></div>
+            </div>
+        </div>
+        <div class="diablo-card-body-contents information-only-menu">
+            <p class="underline-text" style="color: #0F0">NOTE</p>
+            <p>This is simply a reference list to the classes defined in characters. To view information about ones that have details, go to the World Facts menu.</p>
+            ` + Object.values(database.CharacterClasses).map(val => {return `<p>`+val.Label+`</p>`; }).join('') + `
+        </div>
+    </div>`;
+}
+
+function draw_sources() {
+    return `
+    <div class="diablo-card">
+        <div class="container">
+            <div class="row align-items-center diablo-card-header">
+                <div class="col col-lg-2">
+                    <button class="diablo-card-go-back-button d-flex align-items-center" onmouseup="pop_popover_stack()">←</button>                    
+                </div>
+                <div class="col col-lg-9"><h5>Sources</h5></div>
+            </div>
+        </div>
+        <div class="diablo-card-body-contents information-only-menu">
+            <p class="underline-text" style="color: #0F0">NOTE</p>
+            <p>This is simply a reference list to the sources used on this app. You can see these by their number in brackets on information.</p>
+            ` + Object.values(database.Sources).map(val => {return `<p>`+val.Name+`</p>`; }).join('') + `
+        </div>
+    </div>`;
+}
+
+function draw_encyclopedia_category(title, db, key) {
+    var popup = document.getElementsByClassName('leaflet-popup-content')[0];
+    // Store current popup content on the stack
+    popover_stack.push(popup.cloneNode(true));
+    var new_popup_body = ""
+    if (title == "Classes") {
+        new_popup_body = draw_classes();
+    } else if (title == "Sources") {
+        new_popup_body = draw_sources();
+    } else {
+        new_popup_body = draw_list(title, db, key == "undefined" ? null : key);
+    }
     popup.innerHTML = new_popup_body;
 }
 
 function encyclopedia_popup() {
     categories = {
-        "Calendar": "CalendarItems",
-        "Characters": "Characters",
+        "Calendar": {db: "CalendarItems", key: "Name"},
+        "Characters": {db: "Characters"},
         "Classes": "",
-        "Creatures": "Creatures",
-        "Locations": "Locations",
-        "Map Locations": "MapLocations",
+        "Creatures": {db: "Creatures"},
+        "Locations": {db: "Locations"},
+        "Map Locations": {db: "MapLocations"},
         "Sources": "",
-        "Timeline Events": "TimelineEvents",
-        "World Facts": "WorldFacts",
-        "World Items": "WorldItems"
+        "Timeline Events": {db: "TimelineEvents", key: "Year"},
+        "World Facts": {db: "WorldFacts"},
+        "World Items": {db: "WorldItems"}
     }
     return `
     <div class="diablo-card">
@@ -377,9 +452,9 @@ function encyclopedia_popup() {
                 <div class="col col-lg-12"><h5>Encyclopedia</h5></div>
             </div>
         </div>
-        <div class="diablo-card-body-contents overflow-scroll">` +
+        <div class="diablo-card-body-contents">` +
             Object.keys(categories).map(category => {
-                return `<button class="encyclopedia-menu-button" onclick="draw_encyclopedia_category('`+category+`', '`+categories[category]+`')">`+category+`</button>`
+                return `<button class="encyclopedia-menu-button" onmouseup="draw_encyclopedia_category('`+category+`', '`+categories[category].db+`', '`+categories[category].key+`')">`+category+`</button>`
             }).join('') +
        `</div>
     </div>`;
@@ -393,7 +468,7 @@ function about_me_popup() {
                 <div class="col col-lg-12"><h5>About Me</h5></div>
             </div>
         </div>
-        <div class="diablo-card-body-contents overflow-scroll about-me">
+        <div class="diablo-card-body-contents about-me">
             <p class="underline-text" style="color: #0F0">About Me</p>
             <p>Who am I? Well, I'm a major Diablo fan - if that wasn't obvious already. I have actually been playing Diablo since the first game came out. 
                 My friend and I would stay up real late at night playing Diablo I on Playstation I. We didn't have a memory card, and playing the game on a 

@@ -109,6 +109,7 @@ h6 {
     color: white;
     margin-top: 8px;
     height: 90%;
+    overflow: scroll;
 }
 
 .diablo-card-body-contents > p {
@@ -198,6 +199,6 @@ h6 {
     padding-bottom: 4px;
 }
 
-.about-me > p { 
+.information-only-menu > p { 
     margin-bottom: 8px;    
 }

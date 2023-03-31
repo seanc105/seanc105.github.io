@@ -1350,7 +1350,7 @@ database = {
             "CauseOfDeath": null,
             "Notes": [
                 {
-                    "Description": "A unique {{{Creature Dark One\">Dark One</link></u> who talks to the player in Diablo 1. Stole the sign from <u><link=\"Character:Ogden:Ogden's}}} inn.",
+                    "Description": "A unique {{{Creature Dark One:Dark One}}} who talks to the player in Diablo 1. Stole the sign from {{{Characters:Ogden:Ogden's}}} inn.",
                     "SourceId": 5,
                     "Inconsistent": false
                 }
@@ -11537,7 +11537,7 @@ database = {
             "CauseOfDeath": "Killed in battle",
             "Notes": [
                 {
-                    "Description": "Someone from the <u><link=\"WorldFact:Thieves Guild\">Thieves Guildlink></u>, protecting {{{Characters:Edlin:Edlin's}}} Cell.",
+                    "Description": "Someone from the {{{WorldFacts:Thieves Guild:Thieves Guild}}}, protecting {{{Characters:Edlin:Edlin's}}} Cell.",
                     "SourceId": 15,
                     "Inconsistent": false
                 }
@@ -16783,7 +16783,7 @@ database = {
             "CauseOfDeath": null,
             "Notes": [
                 {
-                    "Description": "Original owner of the \"Rechel's Ring of Larceny\"; Was a thief in the <u><link=\"WorldFact:Thieves Guild\">Thieves Guildlink></u>.",
+                    "Description": "Original owner of the \"Rechel's Ring of Larceny\"; Was a thief in the {{{WorldFacts:Thieves Guild:Thieves Guild}}}.",
                     "SourceId": 15,
                     "Inconsistent": false
                 }
@@ -16825,7 +16825,7 @@ database = {
             "CauseOfDeath": "Killed by some demons",
             "Notes": [
                 {
-                    "Description": "Was a part of the mining expedition on the Black Rock Ship; Informed <u><link=\"Character:McMahon\">McMahon></u> of the wave that crashed the ship in the desert.",
+                    "Description": "Was a part of the mining expedition on the Black Rock Ship; Informed {{{Characters:McMahon:McMahon}}} of the wave that crashed the ship in the desert.",
                     "SourceId": 15,
                     "Inconsistent": false
                 }
@@ -16877,7 +16877,7 @@ database = {
             "CauseOfDeath": "Likely killed by some demons",
             "Notes": [
                 {
-                    "Description": "Captain of the Black Rock Ship; Continued to offer <u><link=\"Character:McMahon\">McMahon></u> ale even while he was vomiting.",
+                    "Description": "Captain of the Black Rock Ship; Continued to offer {{{Characters:McMahon:McMahon}}} ale even while he was vomiting.",
                     "SourceId": 15,
                     "Inconsistent": false
                 },
@@ -16943,7 +16943,7 @@ database = {
                     "Inconsistent": false
                 },
                 {
-                    "Description": "There's hint from <u><link=\"Character:Kormac\">Kormac></u> that {{{Characters:Adria:Adria}}} was the original leader of <u><link=\"WorldFact:The Coven\">The Coven></u>.",
+                    "Description": "There's hint from {{{Characters:Kormac:Kormac}}} that {{{Characters:Adria:Adria}}} was the original leader of {{{WorldFacts:The Coven:The Coven}}}.",
                     "SourceId": 15,
                     "Inconsistent": false
                 },
@@ -17710,7 +17710,7 @@ database = {
                     "Inconsistent": false
                 },
                 {
-                    "Description": "Parents died from <u><link=\"WorldFact:The Coven\">The Coven></u>.",
+                    "Description": "Parents died from {{{WorldFacts:The Coven:The Coven}}}.",
                     "SourceId": 15,
                     "Inconsistent": false
                 }
@@ -24413,7 +24413,7 @@ database = {
                     "Inconsistent": false
                 },
                 {
-                    "Description": "Captured by <u><link=\"WorldFact:The Coven\">The Coven></u>, and then captured again by {{{Creatures:Khazra:Khazra}}} after trying to run away when {{{Characters:Kalvesan:Kalvesan}}}, his original capture, freed him before a battle.",
+                    "Description": "Captured by {{{WorldFacts:The Coven:The Coven}}}, and then captured again by {{{Creatures:Khazra:Khazra}}} after trying to run away when {{{Characters:Kalvesan:Kalvesan}}}, his original capture, freed him before a battle.",
                     "SourceId": 15,
                     "Inconsistent": false
                 }
@@ -24690,7 +24690,7 @@ database = {
             "CauseOfDeath": "Likely age",
             "Notes": [
                 {
-                    "Description": "A name mentioned by <u><link=\"Character:Kormac\">Kormac></u> during some random dialogue. Apparently wrote some books or stories.",
+                    "Description": "A name mentioned by {{{Characters:Kormac:Kormac}}} during some random dialogue. Apparently wrote some books or stories.",
                     "SourceId": 15,
                     "Inconsistent": false
                 },
@@ -32853,7 +32853,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: Typically feed on carrion, but will attack living creatures."
+                    "Description": "First seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: Typically feed on carrion, but will attack living creatures."
                 },
                 {
                     "SourceId": 5,
@@ -32870,7 +32870,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: Come out at night and tear apart villages; Always in large packs due to constant breeding; Tend to flee when comrades die."
+                    "Description": "First seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: Come out at night and tear apart villages; Always in large packs due to constant breeding; Tend to flee when comrades die."
                 },
                 {
                     "SourceId": 5,
@@ -32917,7 +32917,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: either dead soldiers of a dark campaign or betrayed by someone they trusted; Skeletons of D1 may be {{{WorldFacts:Horadrim:Horadrim}}}."
+                    "Description": "First seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: either dead soldiers of a dark campaign or betrayed by someone they trusted; Skeletons of D1 may be {{{WorldFacts:Horadrim:Horadrim}}}."
                 },
                 {
                     "SourceId": 5,
@@ -32927,7 +32927,7 @@ database = {
                 {
                     "SourceId": 9,
                     "Inconsistent": false,
-                    "Description": "Hell Horrors are actually servants of <u><link=\"Character:Counselor\">Counselors</u>."
+                    "Description": "Hell Horrors are actually servants of {{{Characters:Counselor:Counselors}}}."
                 },
                 {
                     "SourceId": 8,
@@ -32937,7 +32937,7 @@ database = {
                 {
                     "SourceId": 20,
                     "Inconsistent": false,
-                    "Description": "{{{Characters:Adria:Adria}}} reveals that many of the skeletons from D1 were knights of {{{Characters:King Leoric:Leoric}}}, which means they were a mix of {{{WorldFacts:Horadrim:Horadrim}}} ancestors, servants of <u><link=\"Character:Counselor\">Counselors</u>, and {{{Characters:King Leoric:Leoric's}}} knights."
+                    "Description": "{{{Characters:Adria:Adria}}} reveals that many of the skeletons from D1 were knights of {{{Characters:King Leoric:Leoric}}}, which means they were a mix of {{{WorldFacts:Horadrim:Horadrim}}} ancestors, servants of {{{Characters:Counselor:Counselors}}}, and {{{Characters:King Leoric:Leoric's}}} knights."
                 }
             ]
         },
@@ -32976,7 +32976,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: From \"men executed for committing the most depraved and degenerate crimes against the innocent.\"."
+                    "Description": "First seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: From \"men executed for committing the most depraved and degenerate crimes against the innocent.\"."
                 },
                 {
                     "SourceId": 5,
@@ -33013,7 +33013,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First species (Fiend) seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: A dark cabal of wizards created these to act as messengers and do deeds they saw as trivial."
+                    "Description": "First species (Fiend) seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: A dark cabal of wizards created these to act as messengers and do deeds they saw as trivial."
                 },
                 {
                     "SourceId": 5,
@@ -33062,7 +33062,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First species ({{{Creatures:Flesh Clan:Flesh Clan}}}) seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: The \"Clan\" refer to the given clan the goat men are in (different gifts). Prefer to slaughter innocent."
+                    "Description": "First species ({{{Creatures:Flesh Clan:Flesh Clan}}}) seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: The \"Clan\" refer to the given clan the goat men are in (different gifts). Prefer to slaughter innocent."
                 },
                 {
                     "SourceId": 15,
@@ -33102,7 +33102,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: these are \"molded\" {{{WorldFacts:Seraphim:Seraphim}}} that once followed {{{Characters:Inarius:Inarius}}}, but now serve Hell."
+                    "Description": "First seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: these are \"molded\" {{{WorldFacts:Seraphim:Seraphim}}} that once followed {{{Characters:Inarius:Inarius}}}, but now serve Hell."
                 },
                 {
                     "SourceId": 5,
@@ -33306,7 +33306,14 @@ database = {
                     "SourceId": 9,
                     "Inconsistent": false,
                     "Description": "Advocates answer only to {{{Creatures:Balrog:Balrogs}}} and the {{{WorldFacts:Prime Evils:Prime Evils}}}."
-                },
+                }
+            ]
+        },
+        "Slayer": {
+            "Id": 24,
+            "ClassificationTypeId": 108,
+            "ParentSpeciesId": 0,
+            "Notes": [
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
@@ -33353,11 +33360,6 @@ database = {
                     "Description": "Stayed in Pandemonium after the last siege of the fortress ended."
                 }
             ]
-        },
-        "Slayer": {
-            "Id": 494,
-            "ClassificationTypeId": 92,
-            "ParentSpeciesId": 66
         },
         "Lezanti": {
             "Id": 25,
@@ -34154,7 +34156,7 @@ database = {
                 {
                     "SourceId": 8,
                     "Inconsistent": false,
-                    "Description": "Tricked and corrupt {{{WorldFacts:Paladins:Paladins}}} of the Hand of {{{WorldFacts:Zakarum:Zakarum}}}, possessed by Hell to battle any others they deem \"corrupted/tainted\" by the touch of {{{WorldFacts:Prime Evils:The Three}}}."
+                    "Description": "Tricked and corrupt {{{WorldFacts:Paladin:Paladins}}} of the Hand of {{{WorldFacts:Zakarum:Zakarum}}}, possessed by Hell to battle any others they deem \"corrupted/tainted\" by the touch of {{{WorldFacts:Prime Evils:The Three}}}."
                 }
             ]
         },
@@ -34962,7 +34964,7 @@ database = {
                 {
                     "SourceId": 15,
                     "Inconsistent": false,
-                    "Description": "Considered weaker demons, last known to be summoned by {{{Characters:Lazarus:Archbishop Lazarus}}}, according to some spells in the {{{Locations:Cathedral:Cathedral}}}."
+                    "Description": "Considered weaker demons, last known to be summoned by {{{Characters:Lazarus:Archbishop Lazarus}}}, according to some spells in the {{{MapLocations:Cathedral:Cathedral}}}."
                 }
             ]
         },
@@ -37799,6 +37801,11 @@ database = {
         },
         "Enslaved": {
             "Id": 493,
+            "ClassificationTypeId": 92,
+            "ParentSpeciesId": 66
+        },
+        "Slayer (Baal's Minion)": {
+            "Id": 494,
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 66
         },
@@ -43196,7 +43203,7 @@ database = {
             "EventSourceId": 8,
             "Notes": [
                 {
-                    "Description": "NOTE: This is when \"<u><link=\"WorldFact:Uileloscadh M\u00f3r\">Uileloscadh M\u00f3r</link></u>\" is.",
+                    "Description": "NOTE: This is when \"{{{WorldFacts:Uileloscadh M\u00f3r:Uileloscadh M\u00f3r}}}\" is.",
                     "SourceId": 8,
                     "Inconsistent": false
                 }

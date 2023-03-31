@@ -102,14 +102,16 @@ function draw_timeline(map, L) {
 function draw_encyclopedia(map, L) {
     L.easyButton('fa-book side-map-button', function(btn, mymap){
         mymap.closePopup();
-        L.popup().setContent(encyclopedia_popup()).setLatLng(mymap.getCenter()).openOn(mymap);
+        var center = mymap.getCenter();
+        L.popup().setContent(encyclopedia_popup()).setLatLng([center.lat-15, center.lng]).openOn(mymap);
     }, 'Encyclopedia').addTo(map);
 }
 
 function draw_about_me_button(map, L) {
     L.easyButton('fa-address-card side-map-button', function(btn, mymap){
         mymap.closePopup();
-        L.popup().setContent(about_me_popup()).setLatLng(mymap.getCenter()).openOn(mymap);
+        var center = mymap.getCenter();
+        L.popup().setContent(about_me_popup()).setLatLng([center.lat-15, center.lng]).openOn(mymap);
     }, 'About Me').addTo(map);
 }
 
