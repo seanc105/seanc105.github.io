@@ -6,22 +6,25 @@
     <link rel="stylesheet" href="scripts/leaflet/leaflet.css">
     <link rel="stylesheet" href="scripts/leaflet/Leaflet.AnimatedSearchBox.css">
     <link rel="stylesheet" href="scripts/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="scripts/easy-button/easy-button.css">
+    <link rel="stylesheet" href="scripts/font-awesome/font-awesome-all.css">
     <link rel="stylesheet" href="styles/index.css">
     <script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="scripts/jquery-3.6.4.min.js"></script>
     <script src="scripts/fuse.js@6.6.2"></script>
     <script src="scripts/leaflet/leaflet.js"></script>
     <script src="scripts/leaflet/Leaflet.AnimatedSearchBox.js"></script>
+    <script src="scripts/leaflet-timeline-slider.min.js"></script>
+    <script src="scripts/easy-button/easy-button.js"></script>
+    <script src="scripts/font-awesome/font-awesome-all.js"></script>
+    <!-- My stuff -->
     <script src="scripts/database.js"></script>
     <script src="scripts/popup_contents.js"></script>
-    <!-- <script src="scripts/handle_uri.js"></script> -->
     <script src="scripts/draw_map.js"></script>
   </head>
   
   <body style="height: 100%;margin: 0;">
     <div id="map" style="width: 100%; height: 100%; background: #000000;">
-      <!-- <div class="btn-group position-absolute top-0 start-50 translate-middle-x" style="z-index: 1001" >
-        <button type="buttons" id="allbus" class="btn btn-light" onclick="toggle_labels()">Toggle all location names</button>
-      </div> -->
     </div>
     <script type="text/javascript">
     //Creating the Map
@@ -67,9 +70,6 @@
     marker.on('dragend', function(e) {
       marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
     });
-
-    // Center map if uri changed
-    // checkUri(L);
     
     // Markers
     draw_map(map, L);

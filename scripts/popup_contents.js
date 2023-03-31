@@ -63,7 +63,10 @@ function set_character_link(text) {
 }
 
 function set_location_link(text) {
-    return text;
+    return `<button class="diablo-card-link-button" 
+        onmouseup='add_popover_stack("Locations", "`+text.replace("'", "&#39;")+`")'>`
+        +text+
+    `</button>`;
 }
 
 function set_source_link(text) {
@@ -101,8 +104,8 @@ function get_character_alt_names(data) {
 
 function get_deceased(data) {
     var deceased = "Unknown";
-    if (data.deceased != null) {
-        deceased = data.deceased ? "Yes" : "No";
+    if (data.Deceased != null) {
+        deceased = data.Deceased ? "Yes" : "No";
     }
     
     return `<p><span class="bold-text">Deceased:</span> <span style="color: #0FF;">` + deceased + `</p>`;
@@ -119,7 +122,7 @@ function get_birth_year(data) {
 }
 
 function get_cause_of_death(data) {
-    return `<p><span class="bold-text">Cause of Death:</span> <span style="color: #0FF;">` + (data.CauseOfDeath || "N/A") + `</p>`;
+    return `<p><span class="bold-text">Cause of Death:</span> <span style="color: #0FF;">` + (parse_links_in_text(data.CauseOfDeath || "N/A")) + `</p>`;
 }
 
 function get_parent_species(data) {
@@ -250,7 +253,7 @@ function get_places_of_interest(data) {
 function get_been_here(data) {
     var all_people = "";
 
-    Object.keys(database.Characters).forEach(character => {
+    Object.keys(database.Characters).map(character => {
         for (var i in database.Characters[character].TraveledLocations) {
             if (database.Characters[character].TraveledLocations[i].MapLocationId == data.Id) {
                 all_people += `<p style="color: #BBB;"> - ` + set_character_link(character) +`</p>`;
@@ -320,6 +323,118 @@ function custom_popup(name, data, things_to_display) {
             (things_to_display.includes('been_here') ? get_been_here(data) : '') + 
             (things_to_display.includes('first_seen_here') ? get_first_seen_here(data) : '') + 
        `</div>
+    </div>`;
+}
+
+function draw_list(database_name, use_key_for_label, label_field=null) {
+
+}
+
+function draw_encyclopedia_category(title, database_name) {
+    var popup = document.getElementsByClassName('leaflet-popup-content')[0];
+    // Store current popup content on the stack
+    popover_stack.push(popup.cloneNode(true));
+    var data = database[type][item];
+
+    var new_popup_body = `
+    <div class="diablo-card">
+        <div class="container">
+            <div class="row align-items-center diablo-card-header">
+            ` + (popover_stack.length > 0 ? `
+                <div class="col col-lg-2">
+                    <button class="diablo-card-go-back-button d-flex align-items-center" onmouseup="pop_popover_stack()">←</button>                    
+                </div>
+                <div class="col col-lg-9"><h5>`+title+`</h5></div>` : `
+                <div class="col col-lg-12"><h5>`+title+`</h5></div>`) + `
+            </div>
+        </div>
+        <div class="diablo-card-body-contents overflow-scroll">` +
+            Object.keys(categories).map(category => {
+                return `<button class="encyclopedia-menu-button" onclick="draw_encyclopedia_category('`+category+`', '`+categories[category]+`')">`+category+`</button>`
+            }).join('') +
+       `</div>
+    </div>`;
+    popup.innerHTML = new_popup_body;
+}
+
+function encyclopedia_popup() {
+    categories = {
+        "Calendar": "CalendarItems",
+        "Characters": "Characters",
+        "Classes": "",
+        "Creatures": "Creatures",
+        "Locations": "Locations",
+        "Map Locations": "MapLocations",
+        "Sources": "",
+        "Timeline Events": "TimelineEvents",
+        "World Facts": "WorldFacts",
+        "World Items": "WorldItems"
+    }
+    return `
+    <div class="diablo-card">
+        <div class="container">
+            <div class="row align-items-center diablo-card-header">
+                <div class="col col-lg-12"><h5>Encyclopedia</h5></div>
+            </div>
+        </div>
+        <div class="diablo-card-body-contents overflow-scroll">` +
+            Object.keys(categories).map(category => {
+                return `<button class="encyclopedia-menu-button" onclick="draw_encyclopedia_category('`+category+`', '`+categories[category]+`')">`+category+`</button>`
+            }).join('') +
+       `</div>
+    </div>`;
+}
+
+function about_me_popup() {
+    return `
+    <div class="diablo-card">
+        <div class="container">
+            <div class="row align-items-center diablo-card-header">
+                <div class="col col-lg-12"><h5>About Me</h5></div>
+            </div>
+        </div>
+        <div class="diablo-card-body-contents overflow-scroll about-me">
+            <p class="underline-text" style="color: #0F0">About Me</p>
+            <p>Who am I? Well, I'm a major Diablo fan - if that wasn't obvious already. I have actually been playing Diablo since the first game came out. 
+                My friend and I would stay up real late at night playing Diablo I on Playstation I. We didn't have a memory card, and playing the game on a 
+                Playstation without a memory card is a guaranteed permanent game over... But yes, good times.</p>
+            <p>After Diablo I, I played Diablo II for many years straight. I basically became obsessed with the game to the point where I was reading the 
+                books by Richard A Knaak in high school. I found the lore in the books very interesting and then started to focus around the game lore a lot more 
+                heavily. Since then, I've basically fallen in love with the lore of the entire universe that Diablo takes place in.</p>
+            <p>Then Diablo III came out and I started up again. But at that point, I actually had a huge collection of Diablo-related stuff. Unfortunately, 
+                I ended up needing some finances and sold my entire collection to a friend (who I have not spoken to in many years - I don't know if he still 
+                has the collection).</p>
+            <p>I played some Diablo III shortly after its release, but quickly grew uninterested. The lore and plot holes that were left in place (many call 
+                them 'retconned', I call them 'flaws' or 'inconsistencies') actually grew me distant from the Diablo Universe for a long period of time. But 
+                then Diablo IV was announced and sparked my interest once more. Being in a much more financially stable place, I decided to start up my collection 
+                again and re-read all of the lore in the Diablo Universe. This time, I decided I wanted to record all my findings and readings, and then create 
+                a large map that people could use to reference locations that weren't on the map, places characters traveled, etc.</p>
+            <p>And that, is what led to this application you see before you now.</p>
+            <p class="underline-text" style="color: #0F0">About this App</p>
+            <p>The point of this app, as mentioned above, is to introduce a visual aspect to the game world. It's also made to show locations that the existing 
+                map doesn't have. The next two key parts to this app is to show where characters throughout the lore history have traveled (or at least places they're 
+                mentioned/known to have traveled).</p>
+            <p>You may notice that several locations don't match perfectly with some of the existing maps, perhaps the latest. This is either because 1.) The maps 
+                being released have been inconsistent through their history (Westmarch, for example, has moved several times) or 2.) The descriptions in the original 
+                games/books were different than later on.</p>
+            <p>My thought process on how I decided to draw out this map:</p>
+            <ol>
+                <li>Pre-Diablo III lore took precedence at all times, unless there were existing plot holes</li>
+                <li>If there were plot holes in several locations, I took what made most logical sense</li>
+                <li>I left notes in characters, locations, etc. with a section called 'Inconsistencies'. As mentioned above, some may call these 'retconned'. I'm not changing these labels.</li>
+            </ol>
+            <p>Additional notes:</p>
+            <ol>
+                <li>Everything presented here is prior to Diablo Immortal at this time. There are a few mentions of Diablo IV things here and there, but not many.</li>
+                <li>I apparently love typos. You will probably find a few.</li>
+            </ol>
+            <p>Finally:</p>
+            <ul>
+                <li>I do not work for Blizzard</li>
+                <li>The Diablo Map is artwork owned by Blizzard, not me</li>
+                <li>Modals contain artwork owned by Blizzard, not me</li>
+            </ul>
+        </div>
     </div>`;
 }
 

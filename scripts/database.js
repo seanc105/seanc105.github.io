@@ -14986,7 +14986,7 @@ database = {
                     "Inconsistent": false
                 },
                 {
-                    "Description": "Led into the {{{MapLocations:Cathedral:Cathedral}}} by {{{Characters:Lazarus:Lazarus}}}, but escaped.",
+                    "Description": "Led into the {{{Locations:Cathedral:Cathedral}}} by {{{Characters:Lazarus:Lazarus}}}, but escaped.",
                     "SourceId": 5,
                     "Inconsistent": false
                 },
@@ -15063,12 +15063,12 @@ database = {
                     "Inconsistent": false
                 },
                 {
-                    "Description": "Lost his leg from the {{{Characters:The Butcher's:Butcher}}} demons (led in the {{{MapLocations:Cathedral:Cathedral}}} by {{{Characters:Lazarus:Lazarus}}}).",
+                    "Description": "Lost his leg from the {{{Characters:The Butcher's:Butcher}}} demons (led in the {{{Locations:Cathedral:Cathedral}}} by {{{Characters:Lazarus:Lazarus}}}).",
                     "SourceId": 5,
                     "Inconsistent": false
                 },
                 {
-                    "Description": "Was rescued by {{{Characters:Griswold:Griswold}}} while in the {{{MapLocations:Cathedral:Cathedral}}} at some point when {{{Characters:Wirt:Wirt}}} was taken by demons (as hostage?)",
+                    "Description": "Was rescued by {{{Characters:Griswold:Griswold}}} while in the {{{Locations:Cathedral:Cathedral}}} at some point when {{{Characters:Wirt:Wirt}}} was taken by demons (as hostage?)",
                     "SourceId": 5,
                     "Inconsistent": false
                 },
@@ -15166,7 +15166,7 @@ database = {
             "CauseOfDeath": "Possessed, but later killed in battle",
             "Notes": [
                 {
-                    "Description": "{{{MapLocations:Tristram:Tristram}}}'s Blacksmith; Led into the {{{MapLocations:Cathedral:Cathedral}}} by {{{Characters:Lazarus:Lazarus}}}, but escaped.",
+                    "Description": "{{{MapLocations:Tristram:Tristram}}}'s Blacksmith; Led into the {{{Locations:Cathedral:Cathedral}}} by {{{Characters:Lazarus:Lazarus}}}, but escaped.",
                     "SourceId": 5,
                     "Inconsistent": false
                 },
@@ -15259,7 +15259,7 @@ database = {
             "CauseOfDeath": "Bled out after battle with the Butcher",
             "Notes": [
                 {
-                    "Description": "Someone who escaped the {{{MapLocations:Cathedral:Cathedral}}} but died from his wounds.",
+                    "Description": "Someone who escaped the {{{Locations:Cathedral:Cathedral}}} but died from his wounds.",
                     "SourceId": 5,
                     "Inconsistent": false
                 }
@@ -15786,7 +15786,7 @@ database = {
             "CauseOfDeath": "Slain by {{{Creatures:Risen:Risen}}}",
             "Notes": [
                 {
-                    "Description": "Was one of the militia slaughtered by the {{{Creatures:Risen:Risen Dead}}} when trying to fight them at the old {{{MapLocations:Cathedral:Cathedral}}}.",
+                    "Description": "Was one of the militia slaughtered by the {{{Creatures:Risen:Risen Dead}}} when trying to fight them at the old {{{Locations:Cathedral:Cathedral}}}.",
                     "SourceId": 15,
                     "Inconsistent": false
                 }
@@ -16913,7 +16913,7 @@ database = {
                     "Inconsistent": false
                 },
                 {
-                    "Description": "Came to {{{MapLocations:Tristram:Tristram}}} after the {{{MapLocations:Cathedral:Cathedral}}} was desecrated.",
+                    "Description": "Came to {{{MapLocations:Tristram:Tristram}}} after the {{{Locations:Cathedral:Cathedral}}} was desecrated.",
                     "SourceId": 5,
                     "Inconsistent": false
                 },
@@ -32375,7 +32375,27 @@ database = {
                     "YearOfTravel": 0
                 }
             ]
-        }
+        },
+
+        "Enobakhare": {
+            "Id": 1239,
+            "CharacterClassId": 16,
+            "Deceased": null,
+            "BirthYear": null,
+            "CauseOfDeath": null,
+            "Notes": [
+                {
+                    "Description": "Spirit father of the village of {{{MapLocations:Tiklan:Tiklan}}}.",
+                    "SourceId": 15,
+                    "Inconsistent": false
+                }
+            ],
+            "TraveledLocations": [{
+                "MapLocationId": 87,
+                "OrderNum": 1,
+                "YearOfTravel": 0
+            }]
+        },
     },
     "ClassificationTypes": {
         "1": {
@@ -32451,7 +32471,7 @@ database = {
             "Label": "Volcano"
         },
         "25": {
-            "Label": "Island"
+            "Label": "Island (Region)"
         },
         "26": {
             "Label": "Swamp/Marsh"
@@ -32728,6 +32748,12 @@ database = {
         },
         "117": {
             "Label": "Golem"
+        },
+        "118": {
+            "Label": "Island"
+        },
+        "119": {
+            "Label": "Subregion"
         }
     },
     "Creatures": {
@@ -32827,7 +32853,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: Typically feed on carrion, but will attack living creatures."
+                    "Description": "First seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: Typically feed on carrion, but will attack living creatures."
                 },
                 {
                     "SourceId": 5,
@@ -32844,7 +32870,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: Come out at night and tear apart villages; Always in large packs due to constant breeding; Tend to flee when comrades die."
+                    "Description": "First seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: Come out at night and tear apart villages; Always in large packs due to constant breeding; Tend to flee when comrades die."
                 },
                 {
                     "SourceId": 5,
@@ -32891,7 +32917,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: either dead soldiers of a dark campaign or betrayed by someone they trusted; Skeletons of D1 may be {{{WorldFacts:Horadrim:Horadrim}}}."
+                    "Description": "First seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: either dead soldiers of a dark campaign or betrayed by someone they trusted; Skeletons of D1 may be {{{WorldFacts:Horadrim:Horadrim}}}."
                 },
                 {
                     "SourceId": 5,
@@ -32950,7 +32976,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: From \"men executed for committing the most depraved and degenerate crimes against the innocent.\"."
+                    "Description": "First seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: From \"men executed for committing the most depraved and degenerate crimes against the innocent.\"."
                 },
                 {
                     "SourceId": 5,
@@ -32987,7 +33013,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First species (Fiend) seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: A dark cabal of wizards created these to act as messengers and do deeds they saw as trivial."
+                    "Description": "First species (Fiend) seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: A dark cabal of wizards created these to act as messengers and do deeds they saw as trivial."
                 },
                 {
                     "SourceId": 5,
@@ -33036,7 +33062,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First species ({{{Creatures:Flesh Clan:Flesh Clan}}}) seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: The \"Clan\" refer to the given clan the goat men are in (different gifts). Prefer to slaughter innocent."
+                    "Description": "First species ({{{Creatures:Flesh Clan:Flesh Clan}}}) seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: The \"Clan\" refer to the given clan the goat men are in (different gifts). Prefer to slaughter innocent."
                 },
                 {
                     "SourceId": 15,
@@ -33076,7 +33102,7 @@ database = {
                 {
                     "SourceId": 5,
                     "Inconsistent": false,
-                    "Description": "First seen in Diablo I {{{MapLocations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: these are \"molded\" {{{WorldFacts:Seraphim:Seraphim}}} that once followed {{{Characters:Inarius:Inarius}}}, but now serve Hell."
+                    "Description": "First seen in Diablo I {{{Locations:Cathedral:Cathedral}}}; According to {{{Characters:Vischar Orous:Vischar}}}: these are \"molded\" {{{WorldFacts:Seraphim:Seraphim}}} that once followed {{{Characters:Inarius:Inarius}}}, but now serve Hell."
                 },
                 {
                     "SourceId": 5,
@@ -34936,7 +34962,7 @@ database = {
                 {
                     "SourceId": 15,
                     "Inconsistent": false,
-                    "Description": "Considered weaker demons, last known to be summoned by {{{Characters:Lazarus:Archbishop Lazarus}}}, according to some spells in the {{{MapLocations:Cathedral:Cathedral}}}."
+                    "Description": "Considered weaker demons, last known to be summoned by {{{Characters:Lazarus:Archbishop Lazarus}}}, according to some spells in the {{{Locations:Cathedral:Cathedral}}}."
                 }
             ]
         },
@@ -40284,17 +40310,17 @@ database = {
             "Longitude": -87.363281,
             "Notes": [
                 {
-                    "Description": "Likely the capital of the {{{MapLocations:Entsteig (Region):Entsteig}}} region.",
+                    "Description": "Likely the capital of the {{{MapLocations:Entsteig (Subegion):Entsteig}}} region.",
                     "SourceId": 4,
                     "Inconsistent": false
                 }
             ]
         },
-        "Entsteig (Region)": {
+        "Entsteig (Subegion)": {
             "Id": 19,
             "FirstActiveYear": -500,
             "LastActiveYear": 1500,
-            "ClassificationTypeId": 8,
+            "ClassificationTypeId": 119,
             "FromLocationDescription": "Region location shown on Diablo 2 map.",
             "FromLocationSourceId": 26,
             "Latitude": 17.518344,
@@ -41487,8 +41513,8 @@ database = {
             "ClassificationTypeId": 8,
             "FromLocationDescription": "Region shown on newer maps.",
             "FromLocationSourceId": 27,
-            "Latitude": 1.537901,
-            "Longitude": -73.87207,
+            "Latitude": 4.286597, 
+            "Longitude": -70.367188,
             "Notes": [
                 {
                     "Description": "A region near the Arreat Summit, where {{{WorldFacts:Barbarian:Barbarians}}} are seen.",
@@ -41641,8 +41667,8 @@ database = {
             "FirstActiveYear": -500,
             "LastActiveYear": 1500,
             "ClassificationTypeId": 1,
-            "FromLocationDescription": "Unknown",
-            "FromLocationSourceId": 0,
+            "FromLocationDescription": "Likely in the {{{MapLocations:Torajan Jungles:Torajan Jungles}}}.",
+            "FromLocationSourceId": 15,
             "Latitude": -69.178184,
             "Longitude": 0.175781
         },
@@ -41925,7 +41951,7 @@ database = {
             "Id": 106,
             "FirstActiveYear": -3000,
             "LastActiveYear": 1500,
-            "ClassificationTypeId": 25,
+            "ClassificationTypeId": 118,
             "FromLocationDescription": "Miles from the coast of {{{MapLocations:Westmarch:Westmarch}}}.",
             "FromLocationSourceId": 15,
             "Latitude": -25.403585,
@@ -42223,7 +42249,7 @@ database = {
             "Id": 128,
             "FirstActiveYear": -3000,
             "LastActiveYear": 1500,
-            "ClassificationTypeId": 8,
+            "ClassificationTypeId": 119,
             "FromLocationDescription": "Around {{{MapLocations:Caldeum:Caldeum}}}.",
             "FromLocationSourceId": 15,
             "Latitude": -4.82826,
@@ -42274,7 +42300,7 @@ database = {
             "FirstActiveYear": -5000,
             "LastActiveYear": 1500,
             "ClassificationTypeId": 22,
-            "FromLocationDescription": "A realm outside of the realm of the 3 main realms.",
+            "FromLocationDescription": "A realm outside of the 3 main realms.",
             "FromLocationSourceId": 15,
             "Latitude": -62.975198,
             "Longitude": 87.890625
@@ -43770,17 +43796,6 @@ database = {
             "Notes": [
                 {
                     "Description": "Guardian of the {{{WorldFacts:Unformed Land:Unformed Land}}}.",
-                    "SourceId": 15,
-                    "Inconsistent": false
-                }
-            ]
-        },
-        "Enobakhare": {
-            "Id": 22,
-            "ClassificationTypeId": 88,
-            "Notes": [
-                {
-                    "Description": "Spirit father of the village of {{{MapLocations:Tiklan:Tiklan}}}.",
                     "SourceId": 15,
                     "Inconsistent": false
                 }

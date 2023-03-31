@@ -19,6 +19,17 @@ h6 {
     font-family: "diablo", sans-serif;
     margin-bottom: 0;
     text-align: center;
+    line-height: 100%;
+    text-shadow: 1px 0 #bbb, -1px 0 #bbb, 0 1px #bbb, 0 -1px #bbb,
+                 1px 1px #bbb, -1px -1px #bbb, 1px -1px #bbb, -1px 1px #bbb;
+}
+
+.diablo-sub-region-font {
+    font-family: "diablo", sans-serif;
+    margin-bottom: 0;
+    text-align: center;
+    line-height: 100%;
+    color: #05441C;
     text-shadow: 1px 0 #bbb, -1px 0 #bbb, 0 1px #bbb, 0 -1px #bbb,
                  1px 1px #bbb, -1px -1px #bbb, 1px -1px #bbb, -1px 1px #bbb;
 }
@@ -36,6 +47,24 @@ h6 {
 }
 
 .large-diablo-font {
+    font-size: xx-large;
+    width: 340px !important;
+    left: -170 !important;
+}
+
+.small-diablo-region-font {
+    font-size: large;
+    width: 120px !important;
+    left: -60 !important;
+}
+
+.medium-diablo-region-font {
+    font-size: x-large;
+    width: 200px !important;
+    left: -100 !important;
+}
+
+.large-diablo-region-font {
     font-size: xx-large;
     width: 340px !important;
     left: -170 !important;
@@ -62,21 +91,6 @@ h6 {
     right: 16 !important;    
     width: 32px;
     height: 32px;
-}
-
-.diablo-card-go-back-button {
-    background-color: transparent;
-    background-image: url('../images/ui/button_small.png');
-    background-size: 50px 40px;
-    width: 50px;
-    height: 40px;
-    color: #DB9A00;
-    font-size: xx-large;
-    border:none;
-    padding-left: 8px;
-    padding-bottom: 4px;
-    margin-left: -4px; /* My friend would kill me if he saw this */
-    margin-bottom: 6px;
 }
 
 .leaflet-container a.leaflet-popup-close-button > span {
@@ -145,6 +159,45 @@ h6 {
     left: 50%;
     margin-left: -60px;
 }
+
 .diablo-card-tooltip:hover .diablo-card-tooltip-text {
     visibility: visible;
+}
+
+.side-map-button {
+    height: 90%;
+    width: 90%;
+}
+
+.diablo-card-go-back-button {
+    background-color: transparent;
+    background-image: url('../images/ui/button_small.png');
+    background-size: 50px 40px;
+    width: 50px;
+    height: 40px;
+    color: #DB9A00;
+    font-size: xx-large;
+    border:none;
+    padding-left: 8px;
+    padding-bottom: 4px;
+    margin-left: -4px; /* My friend would kill me if he saw this */
+    margin-bottom: 6px;
+}
+
+.encyclopedia-menu-button {
+    background-color: transparent;
+    background-image: url('../images/ui/button_wide_nosides.png');
+    background-size: 100% 52px;
+    width: 100%;
+    height: 52px;
+    color: #FFF;
+    font-size: large;
+    font-family: "diablo", sans-serif;
+    border:none;
+    padding-left: 8px;
+    padding-bottom: 4px;
+}
+
+.about-me > p { 
+    margin-bottom: 8px;    
 }
