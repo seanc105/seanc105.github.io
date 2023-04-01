@@ -17,6 +17,10 @@ function get_popup_header(name) {
 }
 
 function add_popover_stack(type, item, title=null) {
+    item = item.replaceAll('__', '"').replaceAll("_", "'")
+    if (title != null) {
+        title = title.replaceAll('__', '"').replaceAll("_", "'");
+    }
     var popup = document.getElementsByClassName('leaflet-popup-content')[0];
     // Store current popup content on the stack
     popover_stack.push(popup.cloneNode(true));
@@ -47,7 +51,7 @@ function parse_links_in_text(text) {
         updated_text = updated_text.replace(
             match[0], // The {{{ type:item:output_text }}}
             `<button class="diablo-card-link-button" 
-                     onmouseup='add_popover_stack("`+type+`", "`+item.replace("'", "&#39;")+`")'>`
+                     onmouseup='add_popover_stack("`+type+`", "`+item.replaceAll("'", "_")+`")'>`
                      +output_text+
             `</button>`
         )
@@ -57,14 +61,14 @@ function parse_links_in_text(text) {
 
 function set_character_link(text) {
     return `<button class="diablo-card-link-button" 
-        onmouseup='add_popover_stack("Characters", "`+text.replace("'", "&#39;")+`")'>`
+        onmouseup='add_popover_stack("Characters", "`+text.replaceAll("'", "_")+`")'>`
         +text+
     `</button>`;
 }
 
 function set_location_link(text) {
     return `<button class="diablo-card-link-button" 
-        onmouseup='add_popover_stack("Locations", "`+text.replace("'", "&#39;")+`")'>`
+        onmouseup='add_popover_stack("Locations", "`+text.replaceAll("'", "_")+`")'>`
         +text+
     `</button>`;
 }
@@ -132,7 +136,7 @@ function get_parent_species(data) {
         for (var i in database.Creatures) {
             if (database.Creatures[i].Id == data.ParentSpeciesId) {
                 parent_species = `<button class="diablo-card-link-button" 
-                    onmouseup='add_popover_stack("Creatures", "`+i.replace("'", "&#39;")+`")'>`
+                    onmouseup='add_popover_stack("Creatures", "`+i.replaceAll("'", "_")+`")'>`
                     +i+
                 `</button>`;
                 break;
@@ -339,11 +343,11 @@ function draw_list(title, db, key) {
     var database_table = database[db];
     var items = [];
     function get_button(text, item_link_key) {
-        item_link_key = item_link_key.toString().replaceAll("'", "&#39;").replaceAll('"', "&#34;")
-        text = text.toString().replaceAll("'", "&#39;").replaceAll('"', "&#34;")
+        item_link_key = item_link_key.toString().replaceAll("'", "_").replaceAll('"', "__")
+        text_link = text.toString().replaceAll("'", "_").replaceAll('"', "__")        
         return `
         <button class="encyclopedia-menu-button" onmouseup="add_popover_stack('`
-          +db+`', '`+item_link_key+`', '`+text+`')">`+text+`</button>`;
+          +db+`', '`+item_link_key+`', '`+text_link+`')">`+text+`</button>`;
     }
     var initial_items = []
     if (key) {

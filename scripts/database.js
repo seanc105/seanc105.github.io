@@ -1729,7 +1729,7 @@ database = {
             "CauseOfDeath": null,
             "Notes": [
                 {
-                    "Description": "Some spirit or demon that {{{Characters:Zayl:Zayl}}} summoned to enchant his new cloak from {{{Characters:Salene:Salene}}}.",
+                    "Description": "Some spirit or demon that {{{Characters:Zayl:Zayl}}} summoned to enchant his new cloak from {{{Characters:Salene Nesardo:Salene}}}.",
                     "SourceId": 14,
                     "Inconsistent": false
                 }
@@ -1750,7 +1750,7 @@ database = {
             "CauseOfDeath": null,
             "Notes": [
                 {
-                    "Description": "Spirit of {{{Characters:Astrogha:Astrogha}}} mentions the name (to replace {{{Characters:Zayl's:Zayl}}} blade w/ a \"proper\" one).",
+                    "Description": "Spirit of {{{Characters:Astrogha:Astrogha}}} mentions the name (to replace {{{Characters:Zayl:Zayl's}}} blade w/ a \"proper\" one).",
                     "SourceId": 14,
                     "Inconsistent": false
                 }
@@ -23765,7 +23765,7 @@ database = {
             "CauseOfDeath": "Died from a {{{Creatures:Wraith:Wraith}}}",
             "Notes": [
                 {
-                    "Description": "A bodyguard of {{{Characters:Salene:Salene}}}.",
+                    "Description": "A bodyguard of {{{Characters:Salene Nesardo:Salene}}}.",
                     "SourceId": 14,
                     "Inconsistent": false
                 }
@@ -23786,7 +23786,7 @@ database = {
             "CauseOfDeath": "Killed by a dark-winged creature",
             "Notes": [
                 {
-                    "Description": "Some noble woman who asked for {{{Characters:Zayl's:Zayl}}} services.",
+                    "Description": "Some noble woman who asked for {{{Characters:Zayl:Zayl's}}} services.",
                     "SourceId": 14,
                     "Inconsistent": false
                 }
@@ -23807,7 +23807,7 @@ database = {
             "CauseOfDeath": "Killed by {{{Characters:Aldric Jitan:Jitan}}}",
             "Notes": [
                 {
-                    "Description": "{{{Characters:Salene:Salene's}}} half-brother.",
+                    "Description": "{{{Characters:Salene Nesardo:Salene's}}} half-brother.",
                     "SourceId": 14,
                     "Inconsistent": false
                 },
@@ -23838,7 +23838,7 @@ database = {
             "CauseOfDeath": "Likely age",
             "Notes": [
                 {
-                    "Description": "{{{Characters:Salene:Salene's}}} late husband - were married 3 and 1/4 years.",
+                    "Description": "{{{Characters:Salene Nesardo:Salene's}}} late husband - were married 3 and 1/4 years.",
                     "SourceId": 14,
                     "Inconsistent": false
                 }
@@ -23968,7 +23968,7 @@ database = {
             "CauseOfDeath": null,
             "Notes": [
                 {
-                    "Description": "Some general that came to request {{{Characters:Salene:Salene}}} speak to {{{Characters:King Cornelius:King Cornelius's}}} death.",
+                    "Description": "Some general that came to request {{{Characters:Salene Nesardo:Salene}}} speak to {{{Characters:King Cornelius:King Cornelius's}}} death.",
                     "SourceId": 14,
                     "Inconsistent": false
                 },
@@ -24033,7 +24033,7 @@ database = {
             "CharacterClassId": 17,
             "Deceased": true,
             "BirthYear": null,
-            "CauseOfDeath": "Killed by {{{Characters:Salene:Salene}}}",
+            "CauseOfDeath": "Killed by {{{Characters:Salene Nesardo:Salene}}}",
             "Notes": [
                 {
                     "Description": "{{{Characters:Justinian IV:Justinian's}}} new aide.",
@@ -24078,7 +24078,7 @@ database = {
             "CauseOfDeath": null,
             "Notes": [
                 {
-                    "Description": "An armed guard who's served {{{Characters:Salene:Salene}}} for 10 years.",
+                    "Description": "An armed guard who's served {{{Characters:Salene Nesardo:Salene}}} for 10 years.",
                     "SourceId": 14,
                     "Inconsistent": false
                 }
@@ -46918,7 +46918,7 @@ database = {
         },
         "Azurewrath": {
             "Id": 32,
-            "FromLocation": "High HEavens",
+            "FromLocation": "High Heavens",
             "ClassificationTypeId": 75,
             "Notes": [
                 {

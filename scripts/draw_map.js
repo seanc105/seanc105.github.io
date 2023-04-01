@@ -31,7 +31,32 @@ function create_icons() {
 }
 
 function update_searchbox(map, searchbox) {
-    var fuse = new Fuse(Object.keys(database.MapLocations), {
+    var db_keys = {
+        "Calendar": {db: "CalendarItems", reference_name_key: "Name"},
+        "Character": {db: "Characters"},
+        "Creature": {db: "Creatures"},
+        "Location": {db: "Locations"},
+        "Map": {db: "MapLocations"},
+        "Event": {db: "TimelineEvents", reference_name_key: "Year"},
+        "Fact": {db: "WorldFacts"},
+        "Item": {db: "WorldItems"}
+    }
+    var search_results = []
+    for (var key in db_keys) {
+        search_results.push(...Object.keys(database[db_keys[key].db])
+                      .map(item => { 
+                        if (key == "Class") {
+                            console.log(key);
+                        }
+                         return key + ": " + (
+                            db_keys[key].reference_name_key ? 
+                                database[db_keys[key].db][item][db_keys[key].reference_name_key] 
+                                : item
+                            ) 
+                      }));
+    }
+
+    var fuse = new Fuse(search_results, {
         shouldSort: true,
         threshold: 0.6,
         location: 0,
@@ -57,23 +82,32 @@ function update_searchbox(map, searchbox) {
         var value = searchbox.getValue();
         if (value != "") {
             var results = fuse.search(value);
-            likely_item = database.MapLocations[results[0].item];
-            var respective_marker;
-            var done = false;
-            for (var marker_group in markers) {
-                for (var i in markers[marker_group]) {
-                    if (markers[marker_group][i].options.title == results[0].item) {
-                        respective_marker = markers[marker_group][i];
-                        done = true;
+            if (value.startsWith("Map:")) {
+                var first_result = results[0].item.replace(/^Map: /,'');
+                var likely_item = database.MapLocations[first_result];
+                var respective_marker;
+                var done = false;
+                for (var marker_group in markers) {
+                    for (var i in markers[marker_group]) {
+                        if (markers[marker_group][i].options.title == first_result) {
+                            respective_marker = markers[marker_group][i];
+                            done = true;
+                            break;
+                        }
+                    }
+                    if (done) {
                         break;
                     }
                 }
-                if (done) {
-                    break;
-                }
+                respective_marker.toggleTooltip();
+                map.flyTo([likely_item.Latitude, likely_item.Longitude], 4);
+            } else {
+                var result = results[0].item.split(":");
+                var respective_db = db_keys[result[0]].db
+                var respective_item = result[1].trim()
+                var center = map.getCenter();
+                L.popup().setContent(custom_popup(respective_item, database[respective_db][respective_item], popover_display_items[respective_db])).setLatLng([center.lat-15, center.lng]).openOn(map);
             }
-            respective_marker.toggleTooltip();
-            map.flyTo([likely_item.Latitude, likely_item.Longitude], 4);
         }
     
         setTimeout(function () {
