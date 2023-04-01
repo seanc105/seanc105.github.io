@@ -136,6 +136,10 @@ h6 {
     color: inherit;
 }
 
+.diablo-path-button {
+    color: #FA0;
+}
+
 .diablo-card-tooltip {
     /* position: relative; TODO: FIX */
     display: inline-block;

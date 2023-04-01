@@ -1,7 +1,7 @@
 const link_regex = RegExp(/\{\{\{([^:]*):([^:]*):([^\}]*)\}\}\}/g)
 const popover_display_items = {
     "CalendarItems": ['type', 'comes_after', 'comes_before', 'information', 'inconsistent_facts'],
-    "Characters": ['class', 'alt_names', 'deceased', 'birth_year', 'cause_of_death', 'information', 'inconsistent_facts', 'places_visited'],
+    "Characters": ['character_path', 'class', 'alt_names', 'deceased', 'birth_year', 'cause_of_death', 'information', 'inconsistent_facts', 'places_visited'],
     "Creatures": ['type', 'parent_species', 'information', 'inconsistent_facts'],
     "Locations": ['type', 'map_location', 'information', 'inconsistent_facts'],
     "MapLocations": ['type', 'location', 'information', 'inconsistent_facts', 'places_of_interest', 'been_here', 'first_seen_here'],
@@ -61,14 +61,14 @@ function parse_links_in_text(text) {
 
 function set_character_link(text) {
     return `<button class="diablo-card-link-button" 
-        onmouseup='add_popover_stack("Characters", "`+text.replaceAll("'", "_")+`")'>`
+        onmouseup='add_popover_stack("Characters", "`+text.replaceAll("'", "_").replaceAll('"', '__')+`")'>`
         +text+
     `</button>`;
 }
 
 function set_location_link(text) {
     return `<button class="diablo-card-link-button" 
-        onmouseup='add_popover_stack("Locations", "`+text.replaceAll("'", "_")+`")'>`
+        onmouseup='add_popover_stack("Locations", "`+text.replaceAll("'", "_").replaceAll('"', '__')+`")'>`
         +text+
     `</button>`;
 }
@@ -83,6 +83,13 @@ function set_source_link(text) {
     <span class="diablo-card-tooltip underline-text"> [`+ text +`]
         <span class="diablo-card-tooltip-text">` + source_text + `</span>
     </span>`;
+}
+
+function get_character_path(name) {
+    return `<button class="diablo-card-link-button diablo-path-button" 
+        onmouseup='draw_character_path("`+name.replaceAll("'", "_").replaceAll('"', '__')+`")'>
+        [See Character Path!]
+    </button><br><br>`;
 }
 
 function get_type(data) {
@@ -316,6 +323,7 @@ function custom_popup(name, data, things_to_display) {
             </div>
         </div>
         <div class="diablo-card-body-contents">` +
+            (things_to_display.includes('character_path') ? get_character_path(name) : '') +
             (things_to_display.includes('type') ? get_type(data) : '') +
             (things_to_display.includes('class') ? get_character_class(data) : '') +
             (things_to_display.includes('alt_names') ? get_character_alt_names(data) : '') +

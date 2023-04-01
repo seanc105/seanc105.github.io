@@ -15,6 +15,7 @@
     <script src="scripts/leaflet/leaflet.js"></script>
     <script src="scripts/leaflet/Leaflet.AnimatedSearchBox.js"></script>
     <script src="scripts/leaflet-timeline-slider.min.js"></script>
+    <script src="scripts/MovingMarker.js"></script>
     <script src="scripts/easy-button/easy-button.js"></script>
     <script src="scripts/font-awesome/font-awesome-all.js"></script>
     <!-- My stuff -->
@@ -63,13 +64,13 @@
     });
 
     //Coordinate Finder
-    var marker = L.marker([10, 10], {
-      draggable: true,
-    }).addTo(map);
-    marker.bindPopup('LatLng Marker');
-    marker.on('dragend', function(e) {
-      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
-    });
+    // var marker = L.marker([10, 10], {
+    //   draggable: true,
+    // }).addTo(map);
+    // marker.bindPopup('LatLng Marker');
+    // marker.on('dragend', function(e) {
+    //   marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
+    // });
     
     // Markers
     draw_map(map, L);

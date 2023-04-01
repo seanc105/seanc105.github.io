@@ -276,3 +276,39 @@ function draw_map(map, L) {
     draw_encyclopedia(map, L);
     draw_about_me_button(map, L);
 }
+
+function draw_character_path(character_name) {
+    character_name = character_name.replaceAll('__', '"').replaceAll("_", "'")
+    var traveled_locations = database.Characters[character_name].TraveledLocations;
+    var path_coordinates = [];
+    var location_ids = {};
+    for (var name in database.MapLocations) {
+        location_ids[database.MapLocations[name].Id] = name;
+    }
+
+    traveled_locations.forEach(location => {
+        var destination = database.MapLocations[location_ids[location.MapLocationId]];
+        path_coordinates.push([
+            destination.Latitude,
+            destination.Longitude
+        ]);
+    });
+
+    var path = L.polyline(path_coordinates, {
+        weight: 2,
+        color: 'red',
+        dashArray: '5 20',
+        interactive: false
+    }).addTo(map);
+
+    var myMovingMarker = L.Marker.movingMarker(path_coordinates,60*1000)
+        .addTo(map)
+        .on('end', function() {
+            setTimeout(() => {
+                map.removeLayer(this);
+                map.removeLayer(path);
+            }, 3000);
+        });
+
+    myMovingMarker.start();
+}
