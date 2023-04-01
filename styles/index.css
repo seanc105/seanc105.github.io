@@ -1,22 +1,25 @@
 @font-face {
-    font-family: "diablo";
-    src: url("../fonts/diablo.ttf") format("truetype");
+    font-family: 'diabloheavy';
+    src: url('../fonts/diablo.woff2') format('woff2'),
+         url('../fonts/diablo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 h5 {
     text-align: center;
-    font-family: "diablo", sans-serif;
+    font-family: "diabloheavy";
     color: white;
 }
 
 h6 { 
-    font-family: "diablo", sans-serif;
+    font-family: "diabloheavy";
     font-size: small;
     margin-bottom: 0;
 }
 
 .diablo-region-font {
-    font-family: "diablo", sans-serif;
+    font-family: "diabloheavy";
     margin-bottom: 0;
     text-align: center;
     line-height: 100%;
@@ -25,7 +28,7 @@ h6 {
 }
 
 .diablo-sub-region-font {
-    font-family: "diablo", sans-serif;
+    font-family: "diabloheavy";
     margin-bottom: 0;
     text-align: center;
     line-height: 100%;
@@ -148,7 +151,7 @@ h6 {
 }
 
 .diablo-card-tooltip-text {
-    font-family: "diablo", sans-serif;
+    font-family: "diabloheavy";
     font-size: small;
 
     visibility: hidden;
@@ -198,7 +201,7 @@ h6 {
     height: 52px;
     color: #FFF;
     font-size: large;
-    font-family: "diablo", sans-serif;
+    font-family: "diabloheavy";
     border:none;
     padding-left: 8px;
     padding-bottom: 4px;
