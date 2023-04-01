@@ -113,7 +113,7 @@ h6 {
     color: white;
     margin-top: 8px;
     height: 90%;
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .diablo-card-body-contents > p {
