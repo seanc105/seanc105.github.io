@@ -40,37 +40,37 @@ h6 {
 .small-diablo-font {
     font-size: x-small;
     width: 120px !important;
-    left: -60 !important;
+    left: -60px !important;
 }
 
 .medium-diablo-font {
     font-size: large;
     width: 200px !important;
-    left: -100 !important;
+    left: -100px !important;
 }
 
 .large-diablo-font {
     font-size: xx-large;
     width: 340px !important;
-    left: -170 !important;
+    left: -170px !important;
 }
 
 .small-diablo-region-font {
     font-size: large;
     width: 120px !important;
-    left: -60 !important;
+    left: -60px !important;
 }
 
 .medium-diablo-region-font {
     font-size: x-large;
     width: 200px !important;
-    left: -100 !important;
+    left: -100px !important;
 }
 
 .large-diablo-region-font {
     font-size: xx-large;
     width: 340px !important;
-    left: -170 !important;
+    left: -170px !important;
 }
 
 .leaflet-popup-content-wrapper {
@@ -91,8 +91,8 @@ h6 {
 .leaflet-container a.leaflet-popup-close-button {
     background-image: url('../images/ui/closebutton.png');
     background-size: 32px 32px;
-    top: 16  !important;
-    right: 16 !important;    
+    top: 16px !important;
+    right: 16px !important;    
     width: 32px;
     height: 32px;
 }
