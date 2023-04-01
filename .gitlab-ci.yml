@@ -1,0 +1,9 @@
+pages:
+  stage: deploy
+  script:
+  - mv src public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
