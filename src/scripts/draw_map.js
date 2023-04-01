@@ -1,9 +1,5 @@
 var types = ['town', 'mountain', 'tomb', 'river', 'castle', 'monastery', 'unknown'];
 
-/// TODO
-/// Make "Regions" and general landscape fonts different
-/// Just like in the Unity app for reference
-
 var markers = {
     other_landscape_markers: [],
     region_markers: []

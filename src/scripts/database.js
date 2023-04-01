@@ -13608,7 +13608,7 @@ database = {
                 }
             ]
         },
-        "Captain Casco ": {
+        "Captain Casco": {
             "Id": 478,
             "CharacterClassId": 17,
             "Deceased": false,
@@ -14189,7 +14189,7 @@ database = {
                 }
             ]
         },
-        "Ismail Vilehand ": {
+        "Ismail Vilehand": {
             "Id": 499,
             "CharacterClassId": 17,
             "Deceased": true,
@@ -14210,7 +14210,7 @@ database = {
                 }
             ]
         },
-        "Geleb Flamefinger ": {
+        "Geleb Flamefinger": {
             "Id": 500,
             "CharacterClassId": 17,
             "Deceased": true,
@@ -14231,7 +14231,7 @@ database = {
                 }
             ]
         },
-        "Toorc Icefist ": {
+        "Toorc Icefist": {
             "Id": 501,
             "CharacterClassId": 17,
             "Deceased": true,
@@ -14252,7 +14252,7 @@ database = {
                 }
             ]
         },
-        "Bremm Sparkfist ": {
+        "Bremm Sparkfist": {
             "Id": 502,
             "CharacterClassId": 17,
             "Deceased": true,
@@ -14273,7 +14273,7 @@ database = {
                 }
             ]
         },
-        "Wyand Voidbringer ": {
+        "Wyand Voidbringer": {
             "Id": 503,
             "CharacterClassId": 17,
             "Deceased": true,
@@ -36344,7 +36344,7 @@ database = {
             "ClassificationTypeId": 115,
             "ParentSpeciesId": 7
         },
-        "Horror Mage ": {
+        "Horror Mage": {
             "Id": 197,
             "ClassificationTypeId": 115,
             "ParentSpeciesId": 7
@@ -36929,7 +36929,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 22
         },
-        "Blood Temptress ": {
+        "Blood Temptress": {
             "Id": 315,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 22
@@ -36989,7 +36989,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 24
         },
-        "Venom Lord ": {
+        "Venom Lord": {
             "Id": 327,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 24
@@ -37199,7 +37199,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 32
         },
-        "Flesh Hunter ": {
+        "Flesh Hunter": {
             "Id": 369,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 32
@@ -37224,7 +37224,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 32
         },
-        "Flesh Archer ": {
+        "Flesh Archer": {
             "Id": 374,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 32
@@ -37294,7 +37294,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 34
         },
-        "Damned ": {
+        "Damned": {
             "Id": 389,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 34
@@ -37344,7 +37344,7 @@ database = {
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 36
         },
-        "Stygian Doll ": {
+        "Stygian Doll": {
             "Id": 401,
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 36
@@ -37374,7 +37374,7 @@ database = {
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 38
         },
-        "Spider Magis ": {
+        "Spider Magis": {
             "Id": 407,
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 38
@@ -37444,7 +37444,7 @@ database = {
             "ClassificationTypeId": 116,
             "ParentSpeciesId": 39
         },
-        "Blood Lord ": {
+        "Blood Lord": {
             "Id": 421,
             "ClassificationTypeId": 116,
             "ParentSpeciesId": 39
@@ -37504,7 +37504,7 @@ database = {
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 44
         },
-        "Hell Cat ": {
+        "Hell Cat": {
             "Id": 433,
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 44
@@ -37519,7 +37519,7 @@ database = {
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 44
         },
-        "Hell Slinger ": {
+        "Hell Slinger": {
             "Id": 436,
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 44
@@ -37659,7 +37659,7 @@ database = {
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 55
         },
-        "Burning Soul ": {
+        "Burning Soul": {
             "Id": 465,
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 55
@@ -37689,7 +37689,7 @@ database = {
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 57
         },
-        "Stygian Watcher ": {
+        "Stygian Watcher": {
             "Id": 471,
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 57
@@ -37704,7 +37704,7 @@ database = {
             "ClassificationTypeId": 116,
             "ParentSpeciesId": 58
         },
-        "Zealot ": {
+        "Zealot": {
             "Id": 474,
             "ClassificationTypeId": 116,
             "ParentSpeciesId": 58
@@ -37719,7 +37719,7 @@ database = {
             "ClassificationTypeId": 116,
             "ParentSpeciesId": 59
         },
-        "Hierophant ": {
+        "Hierophant": {
             "Id": 477,
             "ClassificationTypeId": 116,
             "ParentSpeciesId": 59
@@ -37734,7 +37734,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 61
         },
-        "Storm Caster ": {
+        "Storm Caster": {
             "Id": 480,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 61
@@ -37749,7 +37749,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 62
         },
-        "Maw Fiend ": {
+        "Maw Fiend": {
             "Id": 483,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 62
@@ -37764,7 +37764,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 63
         },
-        "Oblivion Knight ": {
+        "Oblivion Knight": {
             "Id": 486,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 63
@@ -37779,7 +37779,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 64
         },
-        "Grotesque ": {
+        "Grotesque (Vile Mother)": {
             "Id": 489,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 64
@@ -37794,7 +37794,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 65
         },
-        "Grotesque Wyrm ": {
+        "Grotesque Wyrm": {
             "Id": 492,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 65
@@ -37889,7 +37889,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 68
         },
-        "Death Brigadier ": {
+        "Death Brigadier": {
             "Id": 512,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 68
@@ -37904,7 +37904,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 70
         },
-        "Hell Whip ": {
+        "Hell Whip": {
             "Id": 517,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 70
@@ -37924,7 +37924,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 71
         },
-        "Demon Sprite ": {
+        "Demon Sprite": {
             "Id": 521,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 71
@@ -37944,7 +37944,7 @@ database = {
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 73
         },
-        "Frozen Abyss ": {
+        "Frozen Abyss": {
             "Id": 525,
             "ClassificationTypeId": 92,
             "ParentSpeciesId": 73
@@ -37964,7 +37964,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 74
         },
-        "Defiled Warrior ": {
+        "Defiled Warrior": {
             "Id": 529,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 74
@@ -37979,7 +37979,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 75
         },
-        "Frozen Scourge ": {
+        "Frozen Scourge": {
             "Id": 532,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 75
@@ -37994,7 +37994,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 76
         },
-        "Death Lord ": {
+        "Death Lord": {
             "Id": 536,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 76
@@ -38009,7 +38009,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 77
         },
-        "Rancid Defiler ": {
+        "Rancid Defiler": {
             "Id": 540,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 77
@@ -38029,7 +38029,7 @@ database = {
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 78
         },
-        "Anguish Worm ": {
+        "Anguish Worm": {
             "Id": 544,
             "ClassificationTypeId": 108,
             "ParentSpeciesId": 78
