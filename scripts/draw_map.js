@@ -78,8 +78,8 @@ function update_searchbox(map, searchbox) {
         var value = searchbox.getValue();
         if (value != "") {
             var results = fuse.search(value);
-            if (value.startsWith("Map:")) {
-                var first_result = results[0].item.replace(/^Map: /,'');
+            var first_result = results[0].item.replace(/^Map: /,'');
+            if (database.MapLocations[first_result]) {
                 var likely_item = database.MapLocations[first_result];
                 var respective_marker;
                 var done = false;
@@ -98,7 +98,7 @@ function update_searchbox(map, searchbox) {
                 respective_marker.toggleTooltip();
                 map.flyTo([likely_item.Latitude, likely_item.Longitude], 4);
             } else {
-                var result = results[0].item.split(":");
+                var result = first_result.split(":");
                 var respective_db = db_keys[result[0]].db
                 var respective_item = result[1].trim()
                 var center = map.getCenter();
