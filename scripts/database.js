@@ -41391,7 +41391,7 @@ database = {
             "FirstActiveYear": -3000,
             "LastActiveYear": 1500,
             "ClassificationTypeId": 8,
-            "FromLocationDescription": "Southern tip of the content with the {{{MapLocations:Torajan Jungles:Torajan Jungles}}}.",
+            "FromLocationDescription": "Southern tip of the continent with the {{{MapLocations:Torajan Jungles:Torajan Jungles}}}.",
             "FromLocationSourceId": 15,
             "Latitude": -71.286699,
             "Longitude": -2.724609
