@@ -210,3 +210,8 @@ h6 {
 .information-only-menu > p { 
     margin-bottom: 8px;    
 }
+
+.tristram-icon {
+    box-shadow: 0 0 4px 2px rgb(53, 255, 208);
+    border-radius: 50%;
+}

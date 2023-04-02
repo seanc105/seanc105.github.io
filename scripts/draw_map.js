@@ -24,6 +24,24 @@ function create_icons() {
             })
         }
     });
+    // Custom Tristram icon
+    icons['tristram_icon'] = {
+        small: L.icon({
+            iconUrl: 'images/icons/town.png',
+            iconSize: new L.Point(16, 16),
+            className: 'tristram-icon'
+        }),
+        medium: L.icon({
+            iconUrl: 'images/icons/town.png',
+            iconSize: new L.Point(24, 24),
+            className: 'tristram-icon'
+        }),
+        large: L.icon({
+            iconUrl: 'images/icons/town.png',
+            iconSize: new L.Point(32, 32),
+            className: 'tristram-icon'
+        })
+    }
 }
 
 function update_searchbox(map, searchbox) {
@@ -159,7 +177,13 @@ function draw_map(map, L) {
 
         if (['Village', 'City', 'Town', 'Temple/Cathedral', 'Ruins', 'Port' ].includes(location_type)) {
             type = 'town_markers';
-            icon = icons.town.small;
+            // Tristram needs to look special :)
+            if (location == 'Tristram') {
+                icon = icons.tristram_icon.small;
+            } else {
+                type = 'town_markers';
+                icon = icons.town.small;
+            }
         } else if (['Tomb'].includes(location_type)) {
             type = 'tomb_markers';
             icon = icons.tomb.small;
@@ -238,7 +262,12 @@ function draw_map(map, L) {
         }
 
         markers.town_markers.forEach(marker => {
-            marker.setIcon(icons.town[size]);
+            // Tristram needs to look special :)
+            if (marker.getTooltip().getContent().includes(">Tristram<")) {
+                marker.setIcon(icons.tristram_icon[size]);
+            } else {
+                marker.setIcon(icons.town[size]);
+            }
         });
         markers.mountain_markers.forEach(marker => {
             marker.setIcon(icons.mountain[size]);
