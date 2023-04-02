@@ -315,11 +315,11 @@ function custom_popup(name, data, things_to_display) {
         <div class="container">
             <div class="row align-items-center diablo-card-header">
             ` + (popover_stack.length > 0 ? `
-                <div class="col col-lg-2">
+                <div class="col col-2 col-xl-2 col-lg-2 col-md-2 col-sm-2">
                     <button class="diablo-card-go-back-button d-flex align-items-center" onmouseup="pop_popover_stack()">←</button>                    
                 </div>
-                <div class="col col-lg-9">`+get_popup_header(name)+`</div>` : `
-                <div class="col col-lg-12">`+get_popup_header(name)+`</div>`) + `
+                <div class="col col-9 col-xl-9 col-lg-9 col-md-9 col-sm-9">`+get_popup_header(name)+`</div>` : `
+                <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">`+get_popup_header(name)+`</div>`) + `
             </div>
         </div>
         <div class="diablo-card-body-contents">` +
@@ -378,11 +378,11 @@ function draw_list(title, db, key) {
         <div class="container">
             <div class="row align-items-center diablo-card-header">
             ` + (popover_stack.length > 0 ? `
-                <div class="col col-lg-2">
+                <div class="col col-2 col-xl-2 col-lg-2 col-md-2 col-sm-2">
                     <button class="diablo-card-go-back-button d-flex align-items-center" onmouseup="pop_popover_stack()">←</button>                    
                 </div>
-                <div class="col col-lg-9"><h5>`+title+`</h5></div>` : `
-                <div class="col col-lg-12"><h5>`+title+`</h5></div>`) + `
+                <div class="col col-9 col-xl-9 col-lg-9 col-md-9 col-sm-9"><h5>`+title+`</h5></div>` : `
+                <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12"><h5>`+title+`</h5></div>`) + `
             </div>
         </div>
         <div class="diablo-card-body-contents">` +
@@ -396,10 +396,10 @@ function draw_classes() {
     <div class="diablo-card">
         <div class="container">
             <div class="row align-items-center diablo-card-header">
-                <div class="col col-lg-2">
+                <div class="col col-2 col-xl-2 col-lg-2 col-md-2 col-sm-2">
                     <button class="diablo-card-go-back-button d-flex align-items-center" onmouseup="pop_popover_stack()">←</button>                    
                 </div>
-                <div class="col col-lg-9"><h5>Classes</h5></div>
+                <div class="col col-9 col-xl-9 col-lg-9 col-md-9 col-sm-9"><h5>Classes</h5></div>
             </div>
         </div>
         <div class="diablo-card-body-contents information-only-menu">
@@ -415,10 +415,10 @@ function draw_sources() {
     <div class="diablo-card">
         <div class="container">
             <div class="row align-items-center diablo-card-header">
-                <div class="col col-lg-2">
+                <div class="col col-2 col-xl-2 col-lg-2 col-md-2 col-sm-2">
                     <button class="diablo-card-go-back-button d-flex align-items-center" onmouseup="pop_popover_stack()">←</button>                    
                 </div>
-                <div class="col col-lg-9"><h5>Sources</h5></div>
+                <div class="col col-9 col-xl-9 col-lg-9 col-md-9 col-sm-9"><h5>Sources</h5></div>
             </div>
         </div>
         <div class="diablo-card-body-contents information-only-menu">
@@ -461,7 +461,7 @@ function encyclopedia_popup() {
     <div class="diablo-card">
         <div class="container">
             <div class="row align-items-center diablo-card-header">
-                <div class="col col-lg-12"><h5>Encyclopedia</h5></div>
+                <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12"><h5>Encyclopedia</h5></div>
             </div>
         </div>
         <div class="diablo-card-body-contents">` +
@@ -477,7 +477,7 @@ function about_me_popup() {
     <div class="diablo-card">
         <div class="container">
             <div class="row align-items-center diablo-card-header">
-                <div class="col col-lg-12"><h5>About Me</h5></div>
+                <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12"><h5>About Me</h5></div>
             </div>
         </div>
         <div class="diablo-card-body-contents about-me">
@@ -488,15 +488,16 @@ function about_me_popup() {
             <p>After Diablo I, I played Diablo II for many years straight. I basically became obsessed with the game to the point where I was reading the 
                 books by Richard A Knaak in high school. I found the lore in the books very interesting and then started to focus around the game lore a lot more 
                 heavily. Since then, I've basically fallen in love with the lore of the entire universe that Diablo takes place in.</p>
-            <p>Then Diablo III came out and I started up again. But at that point, I actually had a huge collection of Diablo-related stuff. Unfortunately, 
+            <p>Then Diablo III came out and I started up again. At that point, I actually had a huge collection of Diablo-related stuff. Unfortunately, 
                 I ended up needing some finances and sold my entire collection to a friend (who I have not spoken to in many years - I don't know if he still 
                 has the collection).</p>
-            <p>I played some Diablo III shortly after its release, but quickly grew uninterested. The lore and plot holes that were left in place (many call 
-                them 'retconned', I call them 'flaws' or 'inconsistencies') actually grew me distant from the Diablo Universe for a long period of time. But 
+            <p>I played some Diablo III shortly after its release, but it wasn't quite my cup of tea. The lore and many inconsistencies that were left in place (many call 
+                them 'retconned') actually grew me distant from the Diablo Universe for a long period of time. But 
                 then Diablo IV was announced and sparked my interest once more. Being in a much more financially stable place, I decided to start up my collection 
                 again and re-read all of the lore in the Diablo Universe. This time, I decided I wanted to record all my findings and readings, and then create 
                 a large map that people could use to reference locations that weren't on the map, places characters traveled, etc.</p>
             <p>And that, is what led to this application you see before you now.</p>
+            <br>
             <p class="underline-text" style="color: #0F0">About this App</p>
             <p>The point of this app, as mentioned above, is to introduce a visual aspect to the game world. It's also made to show locations that the existing 
                 map doesn't have. The next two key parts to this app is to show where characters throughout the lore history have traveled (or at least places they're 
@@ -506,14 +507,18 @@ function about_me_popup() {
                 games/books were different than later on.</p>
             <p>My thought process on how I decided to draw out this map:</p>
             <ol>
-                <li>Pre-Diablo III lore took precedence at all times, unless there were existing plot holes</li>
-                <li>If there were plot holes in several locations, I took what made most logical sense</li>
-                <li>I left notes in characters, locations, etc. with a section called 'Inconsistencies'. As mentioned above, some may call these 'retconned'. I'm not changing these labels.</li>
+                <li>Pre-Diablo III lore took precedence at all times, unless there were existing plot holes.</li>
+                <li>If there were plot holes in several locations, I took what made most logical sense.</li>
+                <li>I left notes in characters, locations, etc. with a section called 'Inconsistencies'. As mentioned above, some may call these 'retconned'. 
+                    I'm not changing these labels.</li>
             </ol>
             <p>Additional notes:</p>
             <ol>
                 <li>Everything presented here is prior to Diablo Immortal at this time. There are a few mentions of Diablo IV things here and there, but not many.</li>
+                <li>My plan is to update this map with locations and lore/information from Diablo Immortal and Diablo IV in the future.</li>
                 <li>I apparently love typos. You will probably find a few.</li>
+                <li>If you find a broken link, please report it in the issues. The app you see presented before you is a migration from the Unity app, and many
+                    links broke when doing that. I expect I missed many that are still broken.</li>
             </ol>
             <p>Finally:</p>
             <ul>
