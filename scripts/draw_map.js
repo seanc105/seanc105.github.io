@@ -301,7 +301,16 @@ function draw_character_path(character_name) {
         interactive: false
     }).addTo(map);
 
-    var myMovingMarker = L.Marker.movingMarker(path_coordinates,60*1000)
+    var length_of_time = 60*1000;
+    if (path_coordinates.length == 1) {
+        // Plugin doesn't account for 1 location + 2 locations with same coordinates
+        // so these are hacks to get around that
+        length_of_time = 1;
+        path_coordinates.push([path_coordinates[0][0], path_coordinates[0][1]+.01]);
+    } else if (path_coordinates.length < 5) {
+        length_of_time = 30*1000;
+    }
+    var myMovingMarker = L.Marker.movingMarker(path_coordinates, length_of_time)
         .addTo(map)
         .on('end', function() {
             setTimeout(() => {

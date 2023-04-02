@@ -40317,13 +40317,13 @@ database = {
             "Longitude": -87.363281,
             "Notes": [
                 {
-                    "Description": "Likely the capital of the {{{MapLocations:Entsteig (Subegion):Entsteig}}} region.",
+                    "Description": "Likely the capital of the {{{MapLocations:Entsteig (Subregion):Entsteig}}} region.",
                     "SourceId": 4,
                     "Inconsistent": false
                 }
             ]
         },
-        "Entsteig (Subegion)": {
+        "Entsteig (Subregion)": {
             "Id": 19,
             "FirstActiveYear": -500,
             "LastActiveYear": 1500,
@@ -42445,7 +42445,7 @@ database = {
         "4": {
             "Year": 0,
             "AfterEventId": 3,
-            "EventName": "{{{WorldFacts:The Purge:The Purge}}} happens.",
+            "EventName": "The Purge happens.",
             "EventSourceId": 15,
             "Notes": [
                 {

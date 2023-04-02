@@ -429,6 +429,61 @@ function draw_sources() {
     </div>`;
 }
 
+function draw_event_timelines() {
+    var events_by_year = {}
+    var years = []
+    var output = ""
+    for (var eventId in database.TimelineEvents) {
+        var year = database.TimelineEvents[eventId].Year;
+        if (events_by_year[year]) {
+            events_by_year[year].push(database.TimelineEvents[eventId]);
+        } else {
+            events_by_year[year] = [database.TimelineEvents[eventId]];
+            years.push(year);
+        }
+    }
+    years.sort((a,b) => a - b);
+    
+    years.forEach(year => {
+        var events = events_by_year[year];
+        events.sort((a,b) => a.AfterEventId - b.AfterEventId);
+        output += `<p class="underline-text" style="color: #FFF">Year: `+year+`</p>`;
+        events.forEach(event => {
+            output += `
+            <p style="color: #BFCEC9">`+parse_links_in_text(event.EventName)+set_source_link(event.EventSourceId)+`</p>
+            `;
+            if (event.Notes) {
+                output += `<ul>`
+                event.Notes.forEach(note => {
+                    output += `<li ` +
+                        (note.Inconsistent ? `style="color: #F00">` : `style="color: khaki">`) +
+                        parse_links_in_text(note.Description) + 
+                        set_source_link(note.SourceId) +
+                    `</li>`;
+                });
+                output += `</ul>`;
+            }
+        });
+    });
+
+    return `
+    <div class="diablo-card">
+        <div class="container">
+            <div class="row align-items-center diablo-card-header">
+                <div class="col col-2 col-xl-2 col-lg-2 col-md-2 col-sm-2">
+                    <button class="diablo-card-go-back-button d-flex align-items-center" onmouseup="pop_popover_stack()">←</button>
+                </div>
+                <div class="col col-9 col-xl-9 col-lg-9 col-md-9 col-sm-9"><h5>Timeline Events</h5></div>
+            </div>
+        </div>
+        <div class="diablo-card-body-contents information-only-menu">
+            <p style="color: #0F0">This is simply a better visual of the full timeline vs. having buttons. The events within each year are in order of when they occured. Inconsistences are marked in <span style="color: #F00;">RED</span></p>
+            <br>
+            `+output+`
+        </div>
+    </div>`;
+}
+
 function draw_encyclopedia_category(title, db, key) {
     var popup = document.getElementsByClassName('leaflet-popup-content')[0];
     // Store current popup content on the stack
@@ -438,6 +493,8 @@ function draw_encyclopedia_category(title, db, key) {
         new_popup_body = draw_classes();
     } else if (title == "Sources") {
         new_popup_body = draw_sources();
+    } else if (title == "Timeline Events") {
+        new_popup_body = draw_event_timelines();
     } else {
         new_popup_body = draw_list(title, db, key == "undefined" ? null : key);
     }
@@ -450,11 +507,11 @@ function encyclopedia_popup() {
         "Characters": {db: "Characters"},
         "Classes": "",
         "Creatures": {db: "Creatures"},
+        "Etc. Things": {db: "WorldFacts"},
         "Locations": {db: "Locations"},
         "Map Locations": {db: "MapLocations"},
         "Sources": "",
-        "Timeline Events": {db: "TimelineEvents", key: "Year"},
-        "World Facts": {db: "WorldFacts"},
+        "Timeline Events": "",
         "World Items": {db: "WorldItems"}
     }
     return `
